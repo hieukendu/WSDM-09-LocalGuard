@@ -1,0 +1,38 @@
+\section{Introduction}
+\label{sec:intro}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig1/fig1_overview.pdf}
+\caption{The usual prompt sends four private reviews of this LaMP-3 user. The guard sends only
+low-risk ones, with a cutoff tuned on 225 other users to pass at most half a private review on
+average, and the answer is still 4 stars.}
+\Description{Cartoon of one user. Top, on the laptop: the user asks to rate a new review that begins "Of all of the horse fly sprays, I like this the best". Below are six past reviews as numbered cards with short verbatim excerpts. Reviews 2 to 5 reveal private details, drawn in red and marked with a dog for pet or hearts for partner: "on my cocker", "on my Paso Fino", "MY COCKER", and "my poor, allergy sensitive girl". Reviews 1 and 6 are about weed killer and a cooling product and reveal nothing. Bottom, sent to the AI service: the usual way sends reviews 1 to 5, so four private reviews leave the laptop and the reader robot answers 4 stars. With the guard, only reviews 1 and 6 are sent, no private review leaves, and the answer is again 4 stars. The true rating is 4 stars.}
+\label{fig:walkthrough}
+\end{figure}
+Personalized assistants answer better when the prompt carries records from
+the user's history such as earlier posts, reviews or
+messages~\cite{salemi2024lamp,salemi2025lampqa}. When the model runs at a
+provider, each admitted record leaves the user's device, and personal
+histories are full of self-disclosures about health, family, work and
+location~\cite{dou2024reducing}. Data minimization asks that personal data be
+limited to what the purpose needs~\cite{biega2020operationalizing,ganesh2025data},
+which here means an on-device gate between the profile and the prompt.
+
+Existing gates select profiles or personal fields for a task, reporting benchmark
+utility and leakage with hand-set or utility-tuned thresholds~\cite{liu2026enough,du2026purple,zhou2026operationalizing,bagdasarian2024airgapagent,wang2026spmem,yu2026minim}.
+Deployment instead needs an exposure bound at a chosen level for unseen users.
+
+We obtain that number with conformal risk control~\cite{angelopoulos2024conformal}.
+The exposure of an admission rule, the count of admitted records that an
+auditor flags as self-disclosing, is bounded by the record cap and monotone
+in the rule's one parameter, so calibrating that parameter on audited users
+bounds the expected exposure of a new user's prompt by $\alpha$ for any
+ranking of records (Figure~\ref{fig:walkthrough}). The statement is per
+prompt, in expectation over users exchangeable with the calibration sample,
+and relative to the auditor, which runs offline on consenting calibration
+users only. The theory is standard; we study its use for record admission and its utility cost.
+
+Across three tasks, two LLM auditors and three readers, we compare calibrated
+admission with retrieval and a hindsight oracle. The experiments test the
+bound's dependence on auditors and population, and measure the utility cost
+of restricting whole records rather than removing disclosures within them.

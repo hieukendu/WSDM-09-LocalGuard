@@ -1,0 +1,703 @@
+\newcommand{\MeanRatingUtility}{0.893}
+\newcommand{\MeanRatingKept}{27\% [1, 48]}
+\newcommand{\MeanRatingDelta}{-0.029 [-0.041, -0.017]}
+\newcommand{\SecondJudgeGain}{-0.006 [-0.031, +0.022]}
+\newcommand{\SecondJudgeQwenGain}{+0.016 [-0.005, +0.040]}
+\newcommand{\CumulativeSingleOne}{0.375}
+\newcommand{\CumulativeSingleTen}{0.490}
+\newcommand{\CumulativeCalibratedTen}{0.351}
+\newcommand{\qaCountLoss}{0.107}
+\newcommand{\qaCountSize}{2.18}
+\newcommand{\qaWeightedLoss}{0.086}
+\newcommand{\qaWeightedSize}{1.28}
+\newcommand{\threeCountLoss}{0.150}
+\newcommand{\threeCountSize}{3.11}
+\newcommand{\threeWeightedLoss}{0.090}
+\newcommand{\threeWeightedSize}{1.98}
+\newcommand{\sevenCountLoss}{0.000}
+\newcommand{\sevenCountSize}{0.00}
+\newcommand{\sevenWeightedLoss}{0.000}
+\newcommand{\sevenWeightedSize}{0.00}
+\newcommand{\qaNEval}{300}
+\newcommand{\qaNReader}{150}
+\newcommand{\qaRateDisc}{18}
+\newcommand{\qaRateGemma}{23}
+\newcommand{\qaRateUnion}{26}
+\newcommand{\qaKappaFull}{0.66}
+\newcommand{\qaRateSensUnion}{8}
+\newcommand{\qaQwenRecGemma}{65}
+\newcommand{\qaUsersAnyUnion}{77}
+\newcommand{\qaDetRecallUnion}{62}
+\newcommand{\qaNecSpearman}{0.01}
+\newcommand{\qaUNone}{0.608}
+\newcommand{\qaUSimK}{0.624}
+\newcommand{\qaESimK}{1.41}
+\newcommand{\qaESimKQwen}{0.93}
+\newcommand{\qaESimKAny}{73}
+\newcommand{\qaESimKSens}{0.41}
+\newcommand{\qaTopFiveGain}{+0.016 [-0.008, +0.039]}
+\newcommand{\qaRandKept}{-111}
+\newcommand{\qaFixMedExpo}{0.33}
+\newcommand{\qaFixMedSize}{3.6}
+\newcommand{\qaFixMedUtil}{0.617}
+\newcommand{\qaCalQwenMeasQwen}{0}
+\newcommand{\qaCalQwenMeasQwenWorst}{-0.03}
+\newcommand{\qaCalQwenMeasGemma}{54}
+\newcommand{\qaCalQwenMeasGemmaWorst}{+0.16}
+\newcommand{\qaCalQwenMeasUnion}{67}
+\newcommand{\qaCalQwenMeasUnionWorst}{+0.33}
+\newcommand{\qaCalQwenMeasUnionAny}{50}
+\newcommand{\qaCalQwenMeasUnionAnyWorst}{+0.15}
+\newcommand{\qaCalQwenMeasUnionSens}{29}
+\newcommand{\qaCalQwenMeasUnionSensWorst}{+0.07}
+\newcommand{\qaCalUnionMeasQwen}{0}
+\newcommand{\qaCalUnionMeasQwenWorst}{-0.08}
+\newcommand{\qaCalUnionMeasGemma}{0}
+\newcommand{\qaCalUnionMeasGemmaWorst}{-0.05}
+\newcommand{\qaCalUnionMeasUnion}{0}
+\newcommand{\qaCalUnionMeasUnionWorst}{-0.04}
+\newcommand{\qaCalUnionMeasUnionAny}{0}
+\newcommand{\qaCalUnionMeasUnionAnyWorst}{-0.01}
+\newcommand{\qaCalUnionMeasUnionSens}{0}
+\newcommand{\qaCalUnionMeasUnionSensWorst}{-0.03}
+\newcommand{\qaAnyCSimB}{0.10}
+\newcommand{\qaSensCSimB}{0.11}
+\newcommand{\qaAnyCSimD}{0.39}
+\newcommand{\qaSensCSimD}{0.38}
+\newcommand{\qaSimExpoB}{0.00}
+\newcommand{\qaSimUtilB}{0.608}
+\newcommand{\qaSimSizeB}{0.0}
+\newcommand{\qaSimVsTopB}{-0.015 [-0.035, +0.003]}
+\newcommand{\qaSimVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\qaLttSimExpoB}{0.00}
+\newcommand{\qaLttSimUtilB}{0.608}
+\newcommand{\qaLttSimSizeB}{0.0}
+\newcommand{\qaLttSimVsTopB}{-0.015 [-0.035, +0.003]}
+\newcommand{\qaLttSimVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\qaSimThrExpoB}{0.21}
+\newcommand{\qaSimThrUtilB}{0.609}
+\newcommand{\qaSimThrSizeB}{0.5}
+\newcommand{\qaSimThrVsTopB}{-0.015 [-0.034, +0.004]}
+\newcommand{\qaSimThrVsNoneB}{+0.000 [-0.014, +0.014]}
+\newcommand{\qaLttSimThrExpoB}{0.04}
+\newcommand{\qaLttSimThrUtilB}{0.609}
+\newcommand{\qaLttSimThrSizeB}{0.1}
+\newcommand{\qaLttSimThrVsTopB}{-0.014 [-0.034, +0.005]}
+\newcommand{\qaLttSimThrVsNoneB}{+0.002 [-0.005, +0.010]}
+\newcommand{\qaFltExpoB}{0.02}
+\newcommand{\qaFltUtilB}{0.607}
+\newcommand{\qaFltSizeB}{0.1}
+\newcommand{\qaFltVsTopB}{-0.017 [-0.037, +0.004]}
+\newcommand{\qaFltVsNoneB}{-0.001 [-0.017, +0.011]}
+\newcommand{\qaLttFltExpoB}{0.00}
+\newcommand{\qaLttFltUtilB}{0.608}
+\newcommand{\qaLttFltSizeB}{0.0}
+\newcommand{\qaLttFltVsTopB}{-0.015 [-0.035, +0.003]}
+\newcommand{\qaLttFltVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\qaCSimExpoB}{0.13}
+\newcommand{\qaCSimUtilB}{0.628}
+\newcommand{\qaCSimSizeB}{2.2}
+\newcommand{\qaCSimVsTopB}{+0.004 [-0.015, +0.023]}
+\newcommand{\qaCSimVsNoneB}{+0.019 [-0.005, +0.043]}
+\newcommand{\qaLttCSimExpoB}{0.00}
+\newcommand{\qaLttCSimUtilB}{0.608}
+\newcommand{\qaLttCSimSizeB}{0.0}
+\newcommand{\qaLttCSimVsTopB}{-0.014 [-0.032, +0.006]}
+\newcommand{\qaLttCSimVsNoneB}{+0.001 [+0.000, +0.017]}
+\newcommand{\qaNSigLossB}{0}
+\newcommand{\qaNSigGainB}{0}
+\newcommand{\qaNNonInfB}{0}
+\newcommand{\qaSimExpoD}{0.34}
+\newcommand{\qaSimUtilD}{0.606}
+\newcommand{\qaSimSizeD}{1.0}
+\newcommand{\qaSimVsTopD}{-0.019 [-0.038, -0.000]}
+\newcommand{\qaSimVsNoneD}{-0.003 [-0.028, +0.020]}
+\newcommand{\qaLttSimExpoD}{0.16}
+\newcommand{\qaLttSimUtilD}{0.607}
+\newcommand{\qaLttSimSizeD}{0.5}
+\newcommand{\qaLttSimVsTopD}{-0.017 [-0.036, +0.004]}
+\newcommand{\qaLttSimVsNoneD}{-0.001 [-0.022, +0.016]}
+\newcommand{\qaSimThrExpoD}{0.50}
+\newcommand{\qaSimThrUtilD}{0.610}
+\newcommand{\qaSimThrSizeD}{1.6}
+\newcommand{\qaSimThrVsTopD}{-0.013 [-0.030, +0.002]}
+\newcommand{\qaSimThrVsNoneD}{+0.002 [-0.016, +0.024]}
+\newcommand{\qaLttSimThrExpoD}{0.30}
+\newcommand{\qaLttSimThrUtilD}{0.606}
+\newcommand{\qaLttSimThrSizeD}{0.9}
+\newcommand{\qaLttSimThrVsTopD}{-0.017 [-0.034, +0.002]}
+\newcommand{\qaLttSimThrVsNoneD}{-0.001 [-0.017, +0.015]}
+\newcommand{\qaFltExpoD}{0.35}
+\newcommand{\qaFltUtilD}{0.598}
+\newcommand{\qaFltSizeD}{1.9}
+\newcommand{\qaFltVsTopD}{-0.026 [-0.046, -0.008]}
+\newcommand{\qaFltVsNoneD}{-0.011 [-0.036, +0.012]}
+\newcommand{\qaLttFltExpoD}{0.19}
+\newcommand{\qaLttFltUtilD}{0.600}
+\newcommand{\qaLttFltSizeD}{1.0}
+\newcommand{\qaLttFltVsTopD}{-0.024 [-0.044, -0.005]}
+\newcommand{\qaLttFltVsNoneD}{-0.008 [-0.030, +0.012]}
+\newcommand{\qaCSimExpoD}{0.42}
+\newcommand{\qaCSimUtilD}{0.614}
+\newcommand{\qaCSimSizeD}{4.1}
+\newcommand{\qaCSimVsTopD}{-0.010 [-0.027, +0.008]}
+\newcommand{\qaCSimVsNoneD}{+0.006 [-0.017, +0.030]}
+\newcommand{\qaLttCSimExpoD}{0.18}
+\newcommand{\qaLttCSimUtilD}{0.625}
+\newcommand{\qaLttCSimSizeD}{2.5}
+\newcommand{\qaLttCSimVsTopD}{+0.001 [-0.021, +0.021]}
+\newcommand{\qaLttCSimVsNoneD}{+0.016 [-0.009, +0.041]}
+\newcommand{\qaNSigLossD}{2}
+\newcommand{\qaNSigGainD}{0}
+\newcommand{\qaNNonInfD}{0}
+\newcommand{\qaQcalCSimUtilB}{0.616}
+\newcommand{\qaQcalCSimExpoB}{0.35}
+\newcommand{\qaQcalCSimUtilD}{0.615}
+\newcommand{\qaQcalCSimExpoD}{0.74}
+\newcommand{\qaShiftMain}{0.14}
+\newcommand{\qaShiftNec}{0.17}
+\newcommand{\qaShiftMainFrac}{8}
+\newcommand{\qaShiftRand}{0.04}
+\newcommand{\qaMonPooled}{-0.010}
+\newcommand{\qaMonMondrian}{-0.059}
+\newcommand{\qaOrExpo}{0.06}
+\newcommand{\qaOrSuff}{99}
+\newcommand{\qaOrEmpty}{70}
+\newcommand{\qaOrEmptyCI}{70\% [60, 79]}
+\newcommand{\qaOrSimKGap}{1.19}
+\newcommand{\qaOrSimKGapCI}{1.19 [0.95, 1.44]}
+\newcommand{\qaOrNeeds}{6}
+\newcommand{\qaOrNeedsCI}{6\% [1, 11]}
+\newcommand{\qaOrN}{80}
+\newcommand{\qaShiftNecNoFeat}{0.04}
+\newcommand{\qaOrSimKExpo}{1.25}
+\newcommand{\qaFixLttDep}{0}
+\newcommand{\qaFixCrcDepTopOne}{0}
+\newcommand{\qaFixCrcTopOneUtil}{0.607}
+\newcommand{\qaFixLttDepTopOne}{0}
+\newcommand{\threeNEval}{450}
+\newcommand{\threeNReader}{450}
+\newcommand{\threeRateDisc}{12}
+\newcommand{\threeRateGemma}{16}
+\newcommand{\threeRateUnion}{18}
+\newcommand{\threeKappaFull}{0.67}
+\newcommand{\threeRateSensUnion}{3}
+\newcommand{\threeQwenRecGemma}{63}
+\newcommand{\threeUsersAnyUnion}{60}
+\newcommand{\threeDetRecallUnion}{55}
+\newcommand{\threeNecSpearman}{0.05}
+\newcommand{\threeUNone}{0.883}
+\newcommand{\threeUSimK}{0.922}
+\newcommand{\threeESimK}{0.94}
+\newcommand{\threeESimKQwen}{0.63}
+\newcommand{\threeESimKAny}{48}
+\newcommand{\threeESimKSens}{0.14}
+\newcommand{\threeTopFiveGain}{+0.039 [+0.023, +0.055]}
+\newcommand{\threeRandKept}{65}
+\newcommand{\threeFixMedExpo}{0.15}
+\newcommand{\threeFixMedSize}{3.2}
+\newcommand{\threeFixMedUtil}{0.903}
+\newcommand{\threeCalQwenMeasQwen}{0}
+\newcommand{\threeCalQwenMeasQwenWorst}{-0.02}
+\newcommand{\threeCalQwenMeasGemma}{54}
+\newcommand{\threeCalQwenMeasGemmaWorst}{+0.12}
+\newcommand{\threeCalQwenMeasUnion}{62}
+\newcommand{\threeCalQwenMeasUnionWorst}{+0.21}
+\newcommand{\threeCalQwenMeasUnionAny}{46}
+\newcommand{\threeCalQwenMeasUnionAnyWorst}{+0.09}
+\newcommand{\threeCalQwenMeasUnionSens}{0}
+\newcommand{\threeCalQwenMeasUnionSensWorst}{-0.01}
+\newcommand{\threeCalUnionMeasQwen}{0}
+\newcommand{\threeCalUnionMeasQwenWorst}{-0.04}
+\newcommand{\threeCalUnionMeasGemma}{0}
+\newcommand{\threeCalUnionMeasGemmaWorst}{-0.03}
+\newcommand{\threeCalUnionMeasUnion}{0}
+\newcommand{\threeCalUnionMeasUnionWorst}{-0.02}
+\newcommand{\threeCalUnionMeasUnionAny}{0}
+\newcommand{\threeCalUnionMeasUnionAnyWorst}{-0.01}
+\newcommand{\threeCalUnionMeasUnionSens}{0}
+\newcommand{\threeCalUnionMeasUnionSensWorst}{-0.02}
+\newcommand{\threeAnyCSimB}{0.14}
+\newcommand{\threeSensCSimB}{0.14}
+\newcommand{\threeAnyCSimD}{0.44}
+\newcommand{\threeSensCSimD}{0.14}
+\newcommand{\threeSimExpoB}{0.10}
+\newcommand{\threeSimUtilB}{0.893}
+\newcommand{\threeSimSizeB}{0.5}
+\newcommand{\threeSimVsTopB}{-0.030 [-0.047, -0.013]}
+\newcommand{\threeSimVsNoneB}{+0.009 [-0.003, +0.029]}
+\newcommand{\threeSimKeptB}{26\% [-7, 68]}
+\newcommand{\threeSimNonInfB}{no}
+\newcommand{\threeSimKeptLowB}{0\%}
+\newcommand{\threeLttSimExpoB}{0.00}
+\newcommand{\threeLttSimUtilB}{0.883}
+\newcommand{\threeLttSimSizeB}{0.0}
+\newcommand{\threeLttSimVsTopB}{-0.040 [-0.052, -0.026]}
+\newcommand{\threeLttSimVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\threeLttSimKeptB}{-0\% [0, 0]}
+\newcommand{\threeLttSimNonInfB}{no}
+\newcommand{\threeLttSimKeptLowB}{0\%}
+\newcommand{\threeSimThrExpoB}{0.17}
+\newcommand{\threeSimThrUtilB}{0.908}
+\newcommand{\threeSimThrSizeB}{1.3}
+\newcommand{\threeSimThrVsTopB}{-0.014 [-0.027, -0.004]}
+\newcommand{\threeSimThrVsNoneB}{+0.025 [+0.015, +0.037]}
+\newcommand{\threeSimThrKeptB}{65\% [40, 97]}
+\newcommand{\threeSimThrNonInfB}{no}
+\newcommand{\threeSimThrKeptLowB}{44\%}
+\newcommand{\threeLttSimThrExpoB}{0.08}
+\newcommand{\threeLttSimThrUtilB}{0.903}
+\newcommand{\threeLttSimThrSizeB}{0.5}
+\newcommand{\threeLttSimThrVsTopB}{-0.021 [-0.034, -0.008]}
+\newcommand{\threeLttSimThrVsNoneB}{+0.019 [+0.007, +0.031]}
+\newcommand{\threeLttSimThrKeptB}{52\% [18, 78]}
+\newcommand{\threeLttSimThrNonInfB}{no}
+\newcommand{\threeLttSimThrKeptLowB}{20\%}
+\newcommand{\threeFltExpoB}{0.11}
+\newcommand{\threeFltUtilB}{0.890}
+\newcommand{\threeFltSizeB}{1.0}
+\newcommand{\threeFltVsTopB}{-0.030 [-0.044, -0.017]}
+\newcommand{\threeFltVsNoneB}{+0.009 [-0.004, +0.025]}
+\newcommand{\threeFltKeptB}{18\% [-12, 58]}
+\newcommand{\threeFltNonInfB}{no}
+\newcommand{\threeFltKeptLowB}{-4\%}
+\newcommand{\threeLttFltExpoB}{0.00}
+\newcommand{\threeLttFltUtilB}{0.883}
+\newcommand{\threeLttFltSizeB}{0.0}
+\newcommand{\threeLttFltVsTopB}{-0.038 [-0.052, -0.024]}
+\newcommand{\threeLttFltVsNoneB}{+0.001 [-0.005, +0.011]}
+\newcommand{\threeLttFltKeptB}{1\% [-13, 29]}
+\newcommand{\threeLttFltNonInfB}{no}
+\newcommand{\threeLttFltKeptLowB}{-6\%}
+\newcommand{\threeCSimExpoB}{0.15}
+\newcommand{\threeCSimUtilB}{0.901}
+\newcommand{\threeCSimSizeB}{3.1}
+\newcommand{\threeCSimVsTopB}{-0.024 [-0.041, -0.011]}
+\newcommand{\threeCSimVsNoneB}{+0.015 [-0.004, +0.033]}
+\newcommand{\threeCSimKeptB}{47\% [-11, 76]}
+\newcommand{\threeCSimNonInfB}{no}
+\newcommand{\threeCSimKeptLowB}{-3\%}
+\newcommand{\threeLttCSimExpoB}{0.05}
+\newcommand{\threeLttCSimUtilB}{0.880}
+\newcommand{\threeLttCSimSizeB}{1.8}
+\newcommand{\threeLttCSimVsTopB}{-0.042 [-0.055, -0.028]}
+\newcommand{\threeLttCSimVsNoneB}{-0.002 [-0.014, +0.010]}
+\newcommand{\threeLttCSimKeptB}{-7\% [-47, 23]}
+\newcommand{\threeLttCSimNonInfB}{no}
+\newcommand{\threeLttCSimKeptLowB}{-36\%}
+\newcommand{\threeNSigLossB}{4}
+\newcommand{\threeNSigGainB}{0}
+\newcommand{\threeNNonInfB}{0}
+\newcommand{\threeSimExpoD}{0.37}
+\newcommand{\threeSimUtilD}{0.905}
+\newcommand{\threeSimSizeD}{2.0}
+\newcommand{\threeSimVsTopD}{-0.015 [-0.025, -0.005]}
+\newcommand{\threeSimVsNoneD}{+0.024 [+0.009, +0.041]}
+\newcommand{\threeSimKeptD}{57\% [29, 93]}
+\newcommand{\threeSimNonInfD}{no}
+\newcommand{\threeSimKeptLowD}{35\%}
+\newcommand{\threeLttSimExpoD}{0.18}
+\newcommand{\threeLttSimUtilD}{0.901}
+\newcommand{\threeLttSimSizeD}{1.0}
+\newcommand{\threeLttSimVsTopD}{-0.021 [-0.032, -0.011]}
+\newcommand{\threeLttSimVsNoneD}{+0.019 [+0.005, +0.035]}
+\newcommand{\threeLttSimKeptD}{45\% [17, 78]}
+\newcommand{\threeLttSimNonInfD}{no}
+\newcommand{\threeLttSimKeptLowD}{20\%}
+\newcommand{\threeSimThrExpoD}{0.46}
+\newcommand{\threeSimThrUtilD}{0.911}
+\newcommand{\threeSimThrSizeD}{2.8}
+\newcommand{\threeSimThrVsTopD}{-0.011 [-0.020, -0.002]}
+\newcommand{\threeSimThrVsNoneD}{+0.028 [+0.014, +0.042]}
+\newcommand{\threeSimThrKeptD}{71\% [45, 98]}
+\newcommand{\threeSimThrNonInfD}{no}
+\newcommand{\threeSimThrKeptLowD}{50\%}
+\newcommand{\threeLttSimThrExpoD}{0.31}
+\newcommand{\threeLttSimThrUtilD}{0.908}
+\newcommand{\threeLttSimThrSizeD}{2.0}
+\newcommand{\threeLttSimThrVsTopD}{-0.014 [-0.024, -0.003]}
+\newcommand{\threeLttSimThrVsNoneD}{+0.026 [+0.014, +0.037]}
+\newcommand{\threeLttSimThrKeptD}{65\% [43, 95]}
+\newcommand{\threeLttSimThrNonInfD}{no}
+\newcommand{\threeLttSimThrKeptLowD}{45\%}
+\newcommand{\threeFltExpoD}{0.44}
+\newcommand{\threeFltUtilD}{0.908}
+\newcommand{\threeFltSizeD}{3.4}
+\newcommand{\threeFltVsTopD}{-0.014 [-0.024, -0.006]}
+\newcommand{\threeFltVsNoneD}{+0.025 [+0.012, +0.042]}
+\newcommand{\threeFltKeptD}{65\% [39, 91]}
+\newcommand{\threeFltNonInfD}{no}
+\newcommand{\threeFltKeptLowD}{43\%}
+\newcommand{\threeLttFltExpoD}{0.26}
+\newcommand{\threeLttFltUtilD}{0.902}
+\newcommand{\threeLttFltSizeD}{2.0}
+\newcommand{\threeLttFltVsTopD}{-0.019 [-0.032, -0.009]}
+\newcommand{\threeLttFltVsNoneD}{+0.020 [+0.007, +0.035]}
+\newcommand{\threeLttFltKeptD}{50\% [21, 79]}
+\newcommand{\threeLttFltNonInfD}{no}
+\newcommand{\threeLttFltKeptLowD}{25\%}
+\newcommand{\threeCSimExpoD}{0.40}
+\newcommand{\threeCSimUtilD}{0.919}
+\newcommand{\threeCSimSizeD}{4.5}
+\newcommand{\threeCSimVsTopD}{-0.004 [-0.012, +0.004]}
+\newcommand{\threeCSimVsNoneD}{+0.036 [+0.020, +0.051]}
+\newcommand{\threeCSimKeptD}{91\% [66, 117]}
+\newcommand{\threeCSimNonInfD}{no}
+\newcommand{\threeCSimKeptLowD}{70\%}
+\newcommand{\threeLttCSimExpoD}{0.26}
+\newcommand{\threeLttCSimUtilD}{0.915}
+\newcommand{\threeLttCSimSizeD}{3.9}
+\newcommand{\threeLttCSimVsTopD}{-0.009 [-0.021, +0.001]}
+\newcommand{\threeLttCSimVsNoneD}{+0.030 [+0.014, +0.046]}
+\newcommand{\threeLttCSimKeptD}{81\% [43, 108]}
+\newcommand{\threeLttCSimNonInfD}{no}
+\newcommand{\threeLttCSimKeptLowD}{49\%}
+\newcommand{\threeNSigLossD}{3}
+\newcommand{\threeNSigGainD}{0}
+\newcommand{\threeNNonInfD}{0}
+\newcommand{\threeQcalCSimUtilB}{0.915}
+\newcommand{\threeQcalCSimExpoB}{0.26}
+\newcommand{\threeQcalCSimKeptB}{81\% [43, 111]}
+\newcommand{\threeQcalCSimUtilD}{0.916}
+\newcommand{\threeQcalCSimExpoD}{0.61}
+\newcommand{\threeQcalCSimKeptD}{84\% [64, 110]}
+\newcommand{\threeShiftMain}{0.05}
+\newcommand{\threeShiftNec}{0.16}
+\newcommand{\threeShiftMainFrac}{12}
+\newcommand{\threeShiftRand}{0.05}
+\newcommand{\threeMonPooled}{+0.008}
+\newcommand{\threeMonMondrian}{-0.035}
+\newcommand{\threeOrExpo}{0.01}
+\newcommand{\threeOrSuff}{99}
+\newcommand{\threeOrEmpty}{81}
+\newcommand{\threeOrEmptyCI}{81\% [72, 90]}
+\newcommand{\threeOrSimKGap}{0.90}
+\newcommand{\threeOrSimKGapCI}{0.90 [0.65, 1.16]}
+\newcommand{\threeOrNeeds}{1}
+\newcommand{\threeOrNeedsCI}{1\% [0, 4]}
+\newcommand{\threeOrN}{80}
+\newcommand{\threeShiftNecNoFeat}{0.13}
+\newcommand{\threeOrSimKExpo}{0.91}
+\newcommand{\threeFixLttDep}{0}
+\newcommand{\threeFixCrcDepTopOne}{60}
+\newcommand{\threeFixCrcTopOneUtil}{0.894}
+\newcommand{\threeFixLttDepTopOne}{0}
+\newcommand{\sevenNEval}{300}
+\newcommand{\sevenNReader}{300}
+\newcommand{\sevenRateDisc}{36}
+\newcommand{\sevenRateGemma}{30}
+\newcommand{\sevenRateUnion}{41}
+\newcommand{\sevenKappaFull}{0.63}
+\newcommand{\sevenRateSensUnion}{10}
+\newcommand{\sevenQwenRecGemma}{82}
+\newcommand{\sevenUsersAnyUnion}{94}
+\newcommand{\sevenDetRecallUnion}{42}
+\newcommand{\sevenNecSpearman}{0.21}
+\newcommand{\sevenUNone}{0.372}
+\newcommand{\sevenUSimK}{0.330}
+\newcommand{\sevenESimK}{2.06}
+\newcommand{\sevenESimKQwen}{1.80}
+\newcommand{\sevenESimKAny}{88}
+\newcommand{\sevenESimKSens}{0.48}
+\newcommand{\sevenTopFiveGain}{-0.041 [-0.061, -0.020]}
+\newcommand{\sevenRandKept}{--}
+\newcommand{\sevenFixMedExpo}{0.67}
+\newcommand{\sevenFixMedSize}{3.4}
+\newcommand{\sevenFixMedUtil}{0.325}
+\newcommand{\sevenCalQwenMeasQwen}{0}
+\newcommand{\sevenCalQwenMeasQwenWorst}{-0.04}
+\newcommand{\sevenCalQwenMeasGemma}{0}
+\newcommand{\sevenCalQwenMeasGemmaWorst}{-0.06}
+\newcommand{\sevenCalQwenMeasUnion}{17}
+\newcommand{\sevenCalQwenMeasUnionWorst}{+0.11}
+\newcommand{\sevenCalQwenMeasUnionAny}{21}
+\newcommand{\sevenCalQwenMeasUnionAnyWorst}{+0.04}
+\newcommand{\sevenCalQwenMeasUnionSens}{4}
+\newcommand{\sevenCalQwenMeasUnionSensWorst}{+0.00}
+\newcommand{\sevenCalUnionMeasQwen}{0}
+\newcommand{\sevenCalUnionMeasQwenWorst}{-0.06}
+\newcommand{\sevenCalUnionMeasGemma}{0}
+\newcommand{\sevenCalUnionMeasGemmaWorst}{-0.06}
+\newcommand{\sevenCalUnionMeasUnion}{0}
+\newcommand{\sevenCalUnionMeasUnionWorst}{-0.05}
+\newcommand{\sevenCalUnionMeasUnionAny}{0}
+\newcommand{\sevenCalUnionMeasUnionAnyWorst}{-0.01}
+\newcommand{\sevenCalUnionMeasUnionSens}{0}
+\newcommand{\sevenCalUnionMeasUnionSensWorst}{-0.03}
+\newcommand{\sevenAnyCSimB}{0.00}
+\newcommand{\sevenSensCSimB}{0.12}
+\newcommand{\sevenAnyCSimD}{0.38}
+\newcommand{\sevenSensCSimD}{0.40}
+\newcommand{\sevenSimExpoB}{0.00}
+\newcommand{\sevenSimUtilB}{0.372}
+\newcommand{\sevenSimSizeB}{0.0}
+\newcommand{\sevenSimVsTopB}{+0.041 [+0.024, +0.058]}
+\newcommand{\sevenSimVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\sevenLttSimExpoB}{0.00}
+\newcommand{\sevenLttSimUtilB}{0.372}
+\newcommand{\sevenLttSimSizeB}{0.0}
+\newcommand{\sevenLttSimVsTopB}{+0.041 [+0.024, +0.058]}
+\newcommand{\sevenLttSimVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\sevenSimThrExpoB}{0.14}
+\newcommand{\sevenSimThrUtilB}{0.374}
+\newcommand{\sevenSimThrSizeB}{0.4}
+\newcommand{\sevenSimThrVsTopB}{+0.044 [+0.030, +0.059]}
+\newcommand{\sevenSimThrVsNoneB}{+0.003 [-0.010, +0.015]}
+\newcommand{\sevenLttSimThrExpoB}{0.04}
+\newcommand{\sevenLttSimThrUtilB}{0.378}
+\newcommand{\sevenLttSimThrSizeB}{0.1}
+\newcommand{\sevenLttSimThrVsTopB}{+0.048 [+0.032, +0.063]}
+\newcommand{\sevenLttSimThrVsNoneB}{+0.007 [-0.001, +0.015]}
+\newcommand{\sevenFltExpoB}{0.00}
+\newcommand{\sevenFltUtilB}{0.372}
+\newcommand{\sevenFltSizeB}{0.0}
+\newcommand{\sevenFltVsTopB}{+0.041 [+0.024, +0.058]}
+\newcommand{\sevenFltVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\sevenLttFltExpoB}{0.00}
+\newcommand{\sevenLttFltUtilB}{0.372}
+\newcommand{\sevenLttFltSizeB}{0.0}
+\newcommand{\sevenLttFltVsTopB}{+0.041 [+0.024, +0.058]}
+\newcommand{\sevenLttFltVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\sevenCSimExpoB}{0.00}
+\newcommand{\sevenCSimUtilB}{0.372}
+\newcommand{\sevenCSimSizeB}{0.0}
+\newcommand{\sevenCSimVsTopB}{+0.041 [+0.024, +0.057]}
+\newcommand{\sevenCSimVsNoneB}{-0.000 [+0.000, +0.000]}
+\newcommand{\sevenLttCSimExpoB}{0.00}
+\newcommand{\sevenLttCSimUtilB}{0.372}
+\newcommand{\sevenLttCSimSizeB}{0.0}
+\newcommand{\sevenLttCSimVsTopB}{+0.041 [+0.024, +0.058]}
+\newcommand{\sevenLttCSimVsNoneB}{+0.000 [+0.000, +0.000]}
+\newcommand{\sevenNSigLossB}{0}
+\newcommand{\sevenNSigGainB}{4}
+\newcommand{\sevenNNonInfB}{0}
+\newcommand{\sevenSimExpoD}{0.41}
+\newcommand{\sevenSimUtilD}{0.337}
+\newcommand{\sevenSimSizeD}{1.0}
+\newcommand{\sevenSimVsTopD}{+0.010 [-0.003, +0.030]}
+\newcommand{\sevenSimVsNoneD}{-0.031 [-0.052, -0.006]}
+\newcommand{\sevenLttSimExpoD}{0.00}
+\newcommand{\sevenLttSimUtilD}{0.372}
+\newcommand{\sevenLttSimSizeD}{0.0}
+\newcommand{\sevenLttSimVsTopD}{+0.041 [+0.024, +0.058]}
+\newcommand{\sevenLttSimVsNoneD}{-0.000 [+0.000, +0.000]}
+\newcommand{\sevenSimThrExpoD}{0.44}
+\newcommand{\sevenSimThrUtilD}{0.359}
+\newcommand{\sevenSimThrSizeD}{1.2}
+\newcommand{\sevenSimThrVsTopD}{+0.029 [+0.016, +0.041]}
+\newcommand{\sevenSimThrVsNoneD}{-0.012 [-0.030, +0.006]}
+\newcommand{\sevenLttSimThrExpoD}{0.24}
+\newcommand{\sevenLttSimThrUtilD}{0.370}
+\newcommand{\sevenLttSimThrSizeD}{0.7}
+\newcommand{\sevenLttSimThrVsTopD}{+0.039 [+0.026, +0.054]}
+\newcommand{\sevenLttSimThrVsNoneD}{-0.002 [-0.016, +0.014]}
+\newcommand{\sevenFltExpoD}{0.35}
+\newcommand{\sevenFltUtilD}{0.329}
+\newcommand{\sevenFltSizeD}{1.0}
+\newcommand{\sevenFltVsTopD}{-0.001 [-0.012, +0.010]}
+\newcommand{\sevenFltVsNoneD}{-0.042 [-0.061, -0.024]}
+\newcommand{\sevenLttFltExpoD}{0.00}
+\newcommand{\sevenLttFltUtilD}{0.372}
+\newcommand{\sevenLttFltSizeD}{0.0}
+\newcommand{\sevenLttFltVsTopD}{+0.039 [+0.018, +0.057]}
+\newcommand{\sevenLttFltVsNoneD}{-0.002 [-0.023, +0.000]}
+\newcommand{\sevenCSimExpoD}{0.30}
+\newcommand{\sevenCSimUtilD}{0.332}
+\newcommand{\sevenCSimSizeD}{2.3}
+\newcommand{\sevenCSimVsTopD}{+0.001 [-0.012, +0.014]}
+\newcommand{\sevenCSimVsNoneD}{-0.040 [-0.057, -0.020]}
+\newcommand{\sevenLttCSimExpoD}{0.06}
+\newcommand{\sevenLttCSimUtilD}{0.364}
+\newcommand{\sevenLttCSimSizeD}{0.4}
+\newcommand{\sevenLttCSimVsTopD}{+0.030 [+0.005, +0.054]}
+\newcommand{\sevenLttCSimVsNoneD}{-0.010 [-0.038, +0.000]}
+\newcommand{\sevenNSigLossD}{0}
+\newcommand{\sevenNSigGainD}{1}
+\newcommand{\sevenNNonInfD}{0}
+\newcommand{\sevenQcalCSimUtilB}{0.370}
+\newcommand{\sevenQcalCSimExpoB}{0.01}
+\newcommand{\sevenQcalCSimUtilD}{0.332}
+\newcommand{\sevenQcalCSimExpoD}{0.31}
+\newcommand{\sevenShiftMain}{0.18}
+\newcommand{\sevenShiftNec}{0.74}
+\newcommand{\sevenShiftMainFrac}{4}
+\newcommand{\sevenShiftRand}{0.06}
+\newcommand{\sevenMonPooled}{-0.023}
+\newcommand{\sevenMonMondrian}{-0.061}
+\newcommand{\sevenOrExpo}{0.06}
+\newcommand{\sevenOrSuff}{99}
+\newcommand{\sevenOrEmpty}{74}
+\newcommand{\sevenOrEmptyCI}{74\% [64, 82]}
+\newcommand{\sevenOrSimKGap}{1.81}
+\newcommand{\sevenOrSimKGapCI}{1.81 [1.55, 2.09]}
+\newcommand{\sevenOrNeeds}{6}
+\newcommand{\sevenOrNeedsCI}{6\% [1, 12]}
+\newcommand{\sevenOrN}{80}
+\newcommand{\sevenShiftNecNoFeat}{0.28}
+\newcommand{\sevenOrSimKExpo}{1.88}
+\newcommand{\sevenFixLttDep}{0}
+\newcommand{\sevenFixCrcDepTopOne}{0}
+\newcommand{\sevenFixCrcTopOneUtil}{0.371}
+\newcommand{\sevenFixLttDepTopOne}{0}
+\newcommand{\AnyCellsMax}{50}
+\newcommand{\SensQwenCellsMax}{29}
+\newcommand{\CalUnionAllHold}{yes}
+\newcommand{\LttAboveMax}{1.4}
+\newcommand{\CrcAboveMax}{42}
+\newcommand{\FourteenN}{300}
+\newcommand{\FourteenGain}{+0.065 [+0.046, +0.085]}
+\newcommand{\FourteenNone}{0.863}
+\newcommand{\FourteenTop}{0.928}
+\newcommand{\FourteenUNone}{0.863}
+\newcommand{\FourteenUSimK}{0.928}
+\newcommand{\FourteenESimK}{0.90}
+\newcommand{\FourteenESimKQwen}{0.60}
+\newcommand{\FourteenESimKAny}{46}
+\newcommand{\FourteenESimKSens}{0.12}
+\newcommand{\FourteenTopFiveGain}{+0.065 [+0.046, +0.085]}
+\newcommand{\FourteenFixMedExpo}{0.15}
+\newcommand{\FourteenFixMedSize}{3.2}
+\newcommand{\FourteenFixMedUtil}{0.907}
+\newcommand{\FourteenSimExpoB}{0.09}
+\newcommand{\FourteenSimUtilB}{0.888}
+\newcommand{\FourteenSimSizeB}{0.5}
+\newcommand{\FourteenSimVsTopB}{-0.042 [-0.072, -0.017]}
+\newcommand{\FourteenSimVsNoneB}{+0.023 [+0.000, +0.055]}
+\newcommand{\FourteenSimKeptB}{38\% [0, 78]}
+\newcommand{\FourteenSimNonInfB}{no}
+\newcommand{\FourteenSimKeptLowB}{0\%}
+\newcommand{\FourteenSimThrExpoB}{0.18}
+\newcommand{\FourteenSimThrUtilB}{0.892}
+\newcommand{\FourteenSimThrSizeB}{1.3}
+\newcommand{\FourteenSimThrVsTopB}{-0.036 [-0.051, -0.022]}
+\newcommand{\FourteenSimThrVsNoneB}{+0.029 [+0.016, +0.042]}
+\newcommand{\FourteenSimThrKeptB}{44\% [28, 64]}
+\newcommand{\FourteenSimThrNonInfB}{no}
+\newcommand{\FourteenSimThrKeptLowB}{31\%}
+\newcommand{\FourteenFltExpoB}{0.10}
+\newcommand{\FourteenFltUtilB}{0.900}
+\newcommand{\FourteenFltSizeB}{1.0}
+\newcommand{\FourteenFltVsTopB}{-0.027 [-0.042, -0.012]}
+\newcommand{\FourteenFltVsNoneB}{+0.038 [+0.021, +0.056]}
+\newcommand{\FourteenFltKeptB}{57\% [37, 83]}
+\newcommand{\FourteenFltNonInfB}{no}
+\newcommand{\FourteenFltKeptLowB}{40\%}
+\newcommand{\FourteenCSimExpoB}{0.14}
+\newcommand{\FourteenCSimUtilB}{0.907}
+\newcommand{\FourteenCSimSizeB}{3.2}
+\newcommand{\FourteenCSimVsTopB}{-0.023 [-0.035, -0.010]}
+\newcommand{\FourteenCSimVsNoneB}{+0.042 [+0.025, +0.063]}
+\newcommand{\FourteenCSimKeptB}{67\% [43, 86]}
+\newcommand{\FourteenCSimNonInfB}{no}
+\newcommand{\FourteenCSimKeptLowB}{48\%}
+\newcommand{\FourteenNSigLossB}{4}
+\newcommand{\FourteenNSigGainB}{0}
+\newcommand{\FourteenNNonInfB}{0}
+\newcommand{\FourteenSimExpoD}{0.36}
+\newcommand{\FourteenSimUtilD}{0.923}
+\newcommand{\FourteenSimSizeD}{2.0}
+\newcommand{\FourteenSimVsTopD}{-0.004 [-0.015, +0.007]}
+\newcommand{\FourteenSimVsNoneD}{+0.061 [+0.044, +0.081]}
+\newcommand{\FourteenSimKeptD}{93\% [75, 116]}
+\newcommand{\FourteenSimNonInfD}{yes}
+\newcommand{\FourteenSimKeptLowD}{79\%}
+\newcommand{\FourteenSimThrExpoD}{0.43}
+\newcommand{\FourteenSimThrUtilD}{0.909}
+\newcommand{\FourteenSimThrSizeD}{2.8}
+\newcommand{\FourteenSimThrVsTopD}{-0.019 [-0.032, -0.007]}
+\newcommand{\FourteenSimThrVsNoneD}{+0.046 [+0.029, +0.065]}
+\newcommand{\FourteenSimThrKeptD}{71\% [49, 92]}
+\newcommand{\FourteenSimThrNonInfD}{no}
+\newcommand{\FourteenSimThrKeptLowD}{53\%}
+\newcommand{\FourteenFltExpoD}{0.45}
+\newcommand{\FourteenFltUtilD}{0.916}
+\newcommand{\FourteenFltSizeD}{3.4}
+\newcommand{\FourteenFltVsTopD}{-0.013 [-0.024, -0.002]}
+\newcommand{\FourteenFltVsNoneD}{+0.052 [+0.036, +0.069]}
+\newcommand{\FourteenFltKeptD}{81\% [64, 101]}
+\newcommand{\FourteenFltNonInfD}{no}
+\newcommand{\FourteenFltKeptLowD}{66\%}
+\newcommand{\FourteenCSimExpoD}{0.38}
+\newcommand{\FourteenCSimUtilD}{0.928}
+\newcommand{\FourteenCSimSizeD}{4.5}
+\newcommand{\FourteenCSimVsTopD}{-0.001 [-0.009, +0.007]}
+\newcommand{\FourteenCSimVsNoneD}{+0.064 [+0.046, +0.084]}
+\newcommand{\FourteenCSimKeptD}{99\% [83, 114]}
+\newcommand{\FourteenCSimNonInfD}{yes}
+\newcommand{\FourteenCSimKeptLowD}{86\%}
+\newcommand{\FourteenNSigLossD}{2}
+\newcommand{\FourteenNSigGainD}{0}
+\newcommand{\FourteenNNonInfD}{2}
+\newcommand{\SameN}{300}
+\newcommand{\SameGain}{+0.039 [+0.018, +0.061]}
+\newcommand{\SameNone}{0.888}
+\newcommand{\SameCSimKeptD}{81\% [50, 108]}
+\newcommand{\SameCSimKeptLowD}{56\%}
+\newcommand{\SameCSimNonInfD}{no}
+\newcommand{\threeBaseN}{450}
+\newcommand{\threeBaseRatingsUtil}{0.913}
+\newcommand{\threeBaseRatingsExpo}{0.00}
+\newcommand{\threeBaseRatingsKept}{77\% [51, 107]}
+\newcommand{\threeBaseRatingsKeptLow}{55\%}
+\newcommand{\threeBaseRatingsNonInf}{no}
+\newcommand{\threeBaseRatingsVsTop}{-0.009 [-0.019, +0.000]}
+\newcommand{\threeBaseRedDetUtil}{0.921}
+\newcommand{\threeBaseRedDetExpo}{0.42}
+\newcommand{\threeBaseRedDetKept}{97\% [78, 119]}
+\newcommand{\threeBaseRedDetKeptLow}{82\%}
+\newcommand{\threeBaseRedDetNonInf}{yes}
+\newcommand{\threeBaseRedDetVsTop}{-0.001 [-0.008, +0.005]}
+\newcommand{\threeBaseRedAudUtil}{0.921}
+\newcommand{\threeBaseRedAudExpo}{0.00}
+\newcommand{\threeBaseRedAudKept}{96\% [82, 109]}
+\newcommand{\threeBaseRedAudKeptLow}{84\%}
+\newcommand{\threeBaseRedAudNonInf}{yes}
+\newcommand{\threeBaseRedAudVsTop}{-0.002 [-0.006, +0.002]}
+\newcommand{\FourteenBaseN}{300}
+\newcommand{\FourteenBaseRatingsUtil}{0.909}
+\newcommand{\FourteenBaseRatingsExpo}{0.00}
+\newcommand{\FourteenBaseRatingsKept}{71\% [47, 93]}
+\newcommand{\FourteenBaseRatingsKeptLow}{51\%}
+\newcommand{\FourteenBaseRatingsNonInf}{no}
+\newcommand{\FourteenBaseRatingsVsTop}{-0.019 [-0.033, -0.007]}
+\newcommand{\FourteenBaseRedDetUtil}{0.932}
+\newcommand{\FourteenBaseRedDetExpo}{0.42}
+\newcommand{\FourteenBaseRedDetKept}{105\% [89, 125]}
+\newcommand{\FourteenBaseRedDetKeptLow}{91\%}
+\newcommand{\FourteenBaseRedDetNonInf}{yes}
+\newcommand{\FourteenBaseRedDetVsTop}{+0.003 [-0.006, +0.012]}
+\newcommand{\FourteenBaseRedAudUtil}{0.930}
+\newcommand{\FourteenBaseRedAudExpo}{0.00}
+\newcommand{\FourteenBaseRedAudKept}{103\% [93, 114]}
+\newcommand{\FourteenBaseRedAudKeptLow}{95\%}
+\newcommand{\FourteenBaseRedAudNonInf}{yes}
+\newcommand{\FourteenBaseRedAudVsTop}{+0.002 [-0.003, +0.007]}
+\newcommand{\twoPilotN}{60}
+\newcommand{\twoPilotGain}{+0.183 [+0.067, +0.300]}
+\newcommand{\twoPilotNone}{0.333}
+\newcommand{\twoPilotTop}{0.517}
+\newcommand{\qaLlamaGainE}{-0.010 [-0.035, +0.015]}
+\newcommand{\qaLlamaNone}{0.608}
+\newcommand{\threeLlamaGain}{+0.042 [+0.022, +0.065]}
+\newcommand{\threeLlamaCSimVsTop}{-0.022 [-0.036, -0.007]}
+\newcommand{\threeLlamaSimThrVsTop}{-0.023 [-0.041, -0.007]}
+\newcommand{\threeLlamaSimVsTop}{-0.031 [-0.055, -0.011]}
+\newcommand{\threeLlamaFltVsTop}{-0.025 [-0.042, -0.009]}
+\newcommand{\threeLlamaCSimVsTopD}{-0.002 [-0.010, +0.005]}
+\newcommand{\threeLlamaSimThrVsTopD}{-0.015 [-0.030, -0.003]}
+\newcommand{\threeLlamaN}{150}
+\newcommand{\threeLlamaNone}{0.887}
+\newcommand{\threeLlamaCSimKeptB}{48\% [-9, 91]}
+\newcommand{\threeLlamaCSimKeptLowB}{8\%}
+\newcommand{\threeLlamaCSimNonInfB}{no}
+\newcommand{\threeLlamaCSimExpoB}{0.12}
+\newcommand{\threeLlamaCSimKeptD}{96\% [71, 118]}
+\newcommand{\threeLlamaCSimKeptLowD}{77\%}
+\newcommand{\threeLlamaCSimNonInfD}{yes}
+\newcommand{\threeLlamaCSimExpoD}{0.39}
+\newcommand{\threeLlamaNSigLossB}{4}
+\newcommand{\qaPilotN}{40}
+\newcommand{\qaPilotGain}{-0.022 [-0.070, +0.026]}
+\newcommand{\qaPilotGainSeven}{+0.031 [-0.011, +0.076]}
+\newcommand{\SimConfigs}{48}
+\newcommand{\SimViol}{0}

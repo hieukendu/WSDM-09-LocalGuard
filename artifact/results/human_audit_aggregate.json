@@ -1,0 +1,722 @@
+{
+  "scope": "LaMP-3 only; uniform 60-user sample; complete top-eight pools; 30 calibration and 30 disjoint test users",
+  "n": 480,
+  "category_set_disagreements": 31,
+  "agreement": {
+    "ANY": {
+      "n": 480,
+      "agreement": 0.9708333333333333,
+      "kappa": 0.8829635306001603
+    },
+    "AGE_GENDER": {
+      "n": 480,
+      "agreement": 0.9916666666666667,
+      "kappa": 0.4960629921259811
+    },
+    "RACE_NATIONALITY": {
+      "n": 480,
+      "agreement": 1.0,
+      "kappa": null
+    },
+    "LOCATION": {
+      "n": 480,
+      "agreement": 0.9979166666666667,
+      "kappa": 0.8878504672897202
+    },
+    "APPEARANCE": {
+      "n": 480,
+      "agreement": 0.99375,
+      "kappa": 0.7662337662337667
+    },
+    "PARTNER": {
+      "n": 480,
+      "agreement": 0.9979166666666667,
+      "kappa": 0.9401197604790421
+    },
+    "FINANCE": {
+      "n": 480,
+      "agreement": 0.9979166666666667,
+      "kappa": 0.0
+    },
+    "OCCUPATION": {
+      "n": 480,
+      "agreement": 0.9895833333333334,
+      "kappa": 0.5405819295558973
+    },
+    "FAMILY": {
+      "n": 480,
+      "agreement": 0.9895833333333334,
+      "kappa": 0.9035834806363494
+    },
+    "HEALTH": {
+      "n": 480,
+      "agreement": 0.9916666666666667,
+      "kappa": 0.7460317460317472
+    },
+    "MENTAL_HEALTH": {
+      "n": 480,
+      "agreement": 0.9979166666666667,
+      "kappa": 0.7989949748743728
+    },
+    "EDUCATION": {
+      "n": 480,
+      "agreement": 0.9979166666666667,
+      "kappa": 0.6657381615598854
+    },
+    "PET": {
+      "n": 480,
+      "agreement": 0.9958333333333333,
+      "kappa": 0.9209355954537972
+    },
+    "SEXUAL_ORIENTATION": {
+      "n": 480,
+      "agreement": 1.0,
+      "kappa": null
+    },
+    "NAME_CONTACT": {
+      "n": 480,
+      "agreement": 0.99375,
+      "kappa": 0.5688622754490997
+    }
+  },
+  "status": "complete_two_human_audit_with_heldout_operating_point_comparison",
+  "metrics": {
+    "all_qwen_covered": {
+      "qwen": {
+        "ANY": {
+          "n": 480,
+          "tp": 40,
+          "fp": 11,
+          "fn": 31,
+          "tn": 398,
+          "precision": 0.7843137254901961,
+          "recall": 0.5633802816901409
+        },
+        "AGE_GENDER": {
+          "n": 480,
+          "tp": 1,
+          "fp": 2,
+          "fn": 4,
+          "tn": 473,
+          "precision": 0.3333333333333333,
+          "recall": 0.2
+        },
+        "RACE_NATIONALITY": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "LOCATION": {
+          "n": 480,
+          "tp": 3,
+          "fp": 3,
+          "fn": 1,
+          "tn": 473,
+          "precision": 0.5,
+          "recall": 0.75
+        },
+        "APPEARANCE": {
+          "n": 480,
+          "tp": 2,
+          "fp": 0,
+          "fn": 5,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.2857142857142857
+        },
+        "PARTNER": {
+          "n": 480,
+          "tp": 7,
+          "fp": 4,
+          "fn": 1,
+          "tn": 468,
+          "precision": 0.6363636363636364,
+          "recall": 0.875
+        },
+        "FINANCE": {
+          "n": 480,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0,
+          "tn": 478,
+          "precision": 0.0,
+          "recall": null
+        },
+        "OCCUPATION": {
+          "n": 480,
+          "tp": 1,
+          "fp": 0,
+          "fn": 6,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.14285714285714285
+        },
+        "FAMILY": {
+          "n": 480,
+          "tp": 13,
+          "fp": 4,
+          "fn": 16,
+          "tn": 447,
+          "precision": 0.7647058823529411,
+          "recall": 0.4482758620689655
+        },
+        "HEALTH": {
+          "n": 480,
+          "tp": 7,
+          "fp": 2,
+          "fn": 3,
+          "tn": 468,
+          "precision": 0.7777777777777778,
+          "recall": 0.7
+        },
+        "MENTAL_HEALTH": {
+          "n": 480,
+          "tp": 1,
+          "fp": 0,
+          "fn": 2,
+          "tn": 477,
+          "precision": 1.0,
+          "recall": 0.3333333333333333
+        },
+        "EDUCATION": {
+          "n": 480,
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "tn": 478,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "PET": {
+          "n": 480,
+          "tp": 8,
+          "fp": 1,
+          "fn": 5,
+          "tn": 466,
+          "precision": 0.8888888888888888,
+          "recall": 0.6153846153846154
+        },
+        "SEXUAL_ORIENTATION": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "NAME_CONTACT": {
+          "n": 480,
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "tn": 476,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      }
+    },
+    "common_coverage": {
+      "qwen": {
+        "ANY": {
+          "n": 480,
+          "tp": 40,
+          "fp": 11,
+          "fn": 31,
+          "tn": 398,
+          "precision": 0.7843137254901961,
+          "recall": 0.5633802816901409
+        },
+        "AGE_GENDER": {
+          "n": 480,
+          "tp": 1,
+          "fp": 2,
+          "fn": 4,
+          "tn": 473,
+          "precision": 0.3333333333333333,
+          "recall": 0.2
+        },
+        "RACE_NATIONALITY": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "LOCATION": {
+          "n": 480,
+          "tp": 3,
+          "fp": 3,
+          "fn": 1,
+          "tn": 473,
+          "precision": 0.5,
+          "recall": 0.75
+        },
+        "APPEARANCE": {
+          "n": 480,
+          "tp": 2,
+          "fp": 0,
+          "fn": 5,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.2857142857142857
+        },
+        "PARTNER": {
+          "n": 480,
+          "tp": 7,
+          "fp": 4,
+          "fn": 1,
+          "tn": 468,
+          "precision": 0.6363636363636364,
+          "recall": 0.875
+        },
+        "FINANCE": {
+          "n": 480,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0,
+          "tn": 478,
+          "precision": 0.0,
+          "recall": null
+        },
+        "OCCUPATION": {
+          "n": 480,
+          "tp": 1,
+          "fp": 0,
+          "fn": 6,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.14285714285714285
+        },
+        "FAMILY": {
+          "n": 480,
+          "tp": 13,
+          "fp": 4,
+          "fn": 16,
+          "tn": 447,
+          "precision": 0.7647058823529411,
+          "recall": 0.4482758620689655
+        },
+        "HEALTH": {
+          "n": 480,
+          "tp": 7,
+          "fp": 2,
+          "fn": 3,
+          "tn": 468,
+          "precision": 0.7777777777777778,
+          "recall": 0.7
+        },
+        "MENTAL_HEALTH": {
+          "n": 480,
+          "tp": 1,
+          "fp": 0,
+          "fn": 2,
+          "tn": 477,
+          "precision": 1.0,
+          "recall": 0.3333333333333333
+        },
+        "EDUCATION": {
+          "n": 480,
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "tn": 478,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "PET": {
+          "n": 480,
+          "tp": 8,
+          "fp": 1,
+          "fn": 5,
+          "tn": 466,
+          "precision": 0.8888888888888888,
+          "recall": 0.6153846153846154
+        },
+        "SEXUAL_ORIENTATION": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "NAME_CONTACT": {
+          "n": 480,
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "tn": 476,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "gemma": {
+        "ANY": {
+          "n": 480,
+          "tp": 58,
+          "fp": 18,
+          "fn": 13,
+          "tn": 391,
+          "precision": 0.7631578947368421,
+          "recall": 0.8169014084507042
+        },
+        "AGE_GENDER": {
+          "n": 480,
+          "tp": 3,
+          "fp": 3,
+          "fn": 2,
+          "tn": 472,
+          "precision": 0.5,
+          "recall": 0.6
+        },
+        "RACE_NATIONALITY": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "LOCATION": {
+          "n": 480,
+          "tp": 4,
+          "fp": 5,
+          "fn": 0,
+          "tn": 471,
+          "precision": 0.4444444444444444,
+          "recall": 1.0
+        },
+        "APPEARANCE": {
+          "n": 480,
+          "tp": 5,
+          "fp": 0,
+          "fn": 2,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.7142857142857143
+        },
+        "PARTNER": {
+          "n": 480,
+          "tp": 8,
+          "fp": 26,
+          "fn": 0,
+          "tn": 446,
+          "precision": 0.23529411764705882,
+          "recall": 1.0
+        },
+        "FINANCE": {
+          "n": 480,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0,
+          "tn": 478,
+          "precision": 0.0,
+          "recall": null
+        },
+        "OCCUPATION": {
+          "n": 480,
+          "tp": 2,
+          "fp": 0,
+          "fn": 5,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.2857142857142857
+        },
+        "FAMILY": {
+          "n": 480,
+          "tp": 14,
+          "fp": 6,
+          "fn": 15,
+          "tn": 445,
+          "precision": 0.7,
+          "recall": 0.4827586206896552
+        },
+        "HEALTH": {
+          "n": 480,
+          "tp": 8,
+          "fp": 0,
+          "fn": 2,
+          "tn": 470,
+          "precision": 1.0,
+          "recall": 0.8
+        },
+        "MENTAL_HEALTH": {
+          "n": 480,
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "tn": 476,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666
+        },
+        "EDUCATION": {
+          "n": 480,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 479,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "PET": {
+          "n": 480,
+          "tp": 9,
+          "fp": 2,
+          "fn": 4,
+          "tn": 465,
+          "precision": 0.8181818181818182,
+          "recall": 0.6923076923076923
+        },
+        "SEXUAL_ORIENTATION": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "NAME_CONTACT": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "tn": 478,
+          "precision": null,
+          "recall": 0.0
+        }
+      },
+      "union": {
+        "ANY": {
+          "n": 480,
+          "tp": 61,
+          "fp": 22,
+          "fn": 10,
+          "tn": 387,
+          "precision": 0.7349397590361446,
+          "recall": 0.8591549295774648
+        },
+        "AGE_GENDER": {
+          "n": 480,
+          "tp": 3,
+          "fp": 3,
+          "fn": 2,
+          "tn": 472,
+          "precision": 0.5,
+          "recall": 0.6
+        },
+        "RACE_NATIONALITY": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "LOCATION": {
+          "n": 480,
+          "tp": 4,
+          "fp": 6,
+          "fn": 0,
+          "tn": 470,
+          "precision": 0.4,
+          "recall": 1.0
+        },
+        "APPEARANCE": {
+          "n": 480,
+          "tp": 5,
+          "fp": 0,
+          "fn": 2,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.7142857142857143
+        },
+        "PARTNER": {
+          "n": 480,
+          "tp": 8,
+          "fp": 27,
+          "fn": 0,
+          "tn": 445,
+          "precision": 0.22857142857142856,
+          "recall": 1.0
+        },
+        "FINANCE": {
+          "n": 480,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0,
+          "tn": 477,
+          "precision": 0.0,
+          "recall": null
+        },
+        "OCCUPATION": {
+          "n": 480,
+          "tp": 3,
+          "fp": 0,
+          "fn": 4,
+          "tn": 473,
+          "precision": 1.0,
+          "recall": 0.42857142857142855
+        },
+        "FAMILY": {
+          "n": 480,
+          "tp": 18,
+          "fp": 8,
+          "fn": 11,
+          "tn": 443,
+          "precision": 0.6923076923076923,
+          "recall": 0.6206896551724138
+        },
+        "HEALTH": {
+          "n": 480,
+          "tp": 10,
+          "fp": 2,
+          "fn": 0,
+          "tn": 468,
+          "precision": 0.8333333333333334,
+          "recall": 1.0
+        },
+        "MENTAL_HEALTH": {
+          "n": 480,
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "tn": 476,
+          "precision": 0.75,
+          "recall": 1.0
+        },
+        "EDUCATION": {
+          "n": 480,
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "tn": 478,
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "PET": {
+          "n": 480,
+          "tp": 10,
+          "fp": 2,
+          "fn": 3,
+          "tn": 465,
+          "precision": 0.8333333333333334,
+          "recall": 0.7692307692307693
+        },
+        "SEXUAL_ORIENTATION": {
+          "n": 480,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 480,
+          "precision": null,
+          "recall": null
+        },
+        "NAME_CONTACT": {
+          "n": 480,
+          "tp": 0,
+          "fp": 2,
+          "fn": 2,
+          "tn": 476,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      }
+    }
+  },
+  "exposure_recalibration": "identified on this fully labelled small cohort; held-out means are not population guarantees",
+  "operating_points": {
+    "0.2": {
+      "union_calibrated_index": 0,
+      "human_calibrated_index": 0,
+      "union_calibrated_threshold": -1.0,
+      "human_calibrated_threshold": -1.0,
+      "index_change": 0,
+      "test_human_exposure_before": 0.0,
+      "test_human_exposure_after": 0.0,
+      "test_records_before": 0.0,
+      "test_records_after": 0.0
+    },
+    "0.5": {
+      "union_calibrated_index": 4,
+      "human_calibrated_index": 4,
+      "union_calibrated_threshold": 0.27731071827183995,
+      "human_calibrated_threshold": 0.27731071827183995,
+      "index_change": 0,
+      "test_human_exposure_before": 0.36666666666666664,
+      "test_human_exposure_after": 0.36666666666666664,
+      "test_records_before": 4.0,
+      "test_records_after": 4.0
+    }
+  },
+  "metrics_by_cohort": {
+    "calibration": {
+      "qwen": {
+        "n": 240,
+        "tp": 10,
+        "fp": 4,
+        "fn": 12,
+        "tn": 214,
+        "precision": 0.7142857142857143,
+        "recall": 0.45454545454545453
+      },
+      "gemma": {
+        "n": 240,
+        "tp": 18,
+        "fp": 9,
+        "fn": 4,
+        "tn": 209,
+        "precision": 0.6666666666666666,
+        "recall": 0.8181818181818182
+      },
+      "union": {
+        "n": 240,
+        "tp": 18,
+        "fp": 11,
+        "fn": 4,
+        "tn": 207,
+        "precision": 0.6206896551724138,
+        "recall": 0.8181818181818182
+      }
+    },
+    "test": {
+      "qwen": {
+        "n": 240,
+        "tp": 30,
+        "fp": 7,
+        "fn": 19,
+        "tn": 184,
+        "precision": 0.8108108108108109,
+        "recall": 0.6122448979591837
+      },
+      "gemma": {
+        "n": 240,
+        "tp": 40,
+        "fp": 9,
+        "fn": 9,
+        "tn": 182,
+        "precision": 0.8163265306122449,
+        "recall": 0.8163265306122449
+      },
+      "union": {
+        "n": 240,
+        "tp": 43,
+        "fp": 11,
+        "fn": 6,
+        "tn": 180,
+        "precision": 0.7962962962962963,
+        "recall": 0.8775510204081632
+      }
+    }
+  }
+}

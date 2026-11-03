@@ -1,0 +1,79 @@
+\section{Results}
+\label{sec:results}
+
+\paragraph{The guarantee is only as good as the auditor.}
+The two auditors flag \qaRateDisc\% and \qaRateGemma\% (LaMP-QA),
+\threeRateDisc\% and \threeRateGemma\% (LaMP-3) and \sevenRateDisc\% and
+\sevenRateGemma\% (LaMP-7) of the top-8 candidates, with Cohen's $\kappa$ of
+\qaKappaFull{}, \threeKappaFull{} and \sevenKappaFull{}, and the primary
+auditor finds only \qaQwenRecGemma\%, \threeQwenRecGemma\% and
+\sevenQwenRecGemma\% of the records the second one flags. Similarity top-5
+places \qaESimK{}, \threeESimK{} and \sevenESimK{} union-flagged records in an
+average prompt. Rules calibrated on the primary auditor stay below $\alpha$ under its own
+labels, but under the second auditor's labels their mean exposure exceeds
+$\alpha$ in up to \qaCalQwenMeasGemma\% of (target, rule) cells and under the
+union in up to \qaCalQwenMeasUnion\% (Figure~\ref{fig:main}a). Calibrating on
+the union (Table~\ref{tab:audit}) removes every excess under all three label
+sources, as it must. Single calibration draws still exceed the
+target in up to \CrcAboveMax\% of cases, because the bound holds in
+expectation, while Learn-then-Test at $\delta=0.1$ keeps the share of draws
+above the target at or below \LttAboveMax\%. Without human labels the bound
+is relative to two small LLM auditors.
+
+\begin{table}[t]
+\caption{Share of the 24 (target, rule) cells whose mean test exposure
+exceeds $\alpha$, with the largest excess in records, by calibration labels
+and measurement labels.}
+\label{tab:audit}
+\small
+\setlength{\tabcolsep}{3pt}
+\input{generated/tab_audit}
+\end{table}
+
+\paragraph{What the dial costs.}
+Among the three main tasks, records help only on LaMP-3, where top-5 gains \threeTopFiveGain{} over no
+profile with the 7B reader, \FourteenGain{} with the 14B reader and
+\threeLlamaGain{} with Llama-3.1-8B (95\% intervals). There, a target of
+$\alpha=0.2$ has a real cost. All four calibrated rules lose significantly
+against top-5 with every reader (Table~\ref{tab:main}), and the best keeps
+\threeSimThrKeptB{} of the 7B gain and \FourteenCSimKeptB{} of the 14B
+gain. At $\alpha=0.5$ cleared similarity admits \FourteenCSimExpoD{} instead of
+\FourteenESimK{} flagged records per prompt. It keeps \FourteenCSimKeptD{} of
+the 14B gain, which passes our non-inferiority margin (lower 90\% bound
+\FourteenCSimKeptLowD{}), and \threeCSimKeptD{} of the 7B gain, which is not
+significantly below top-5 but does not pass it. The per-draw variant keeps \threeLttSimThrKeptB{} of the 7B gain at
+$\alpha=0.2$. On LaMP-QA, top-5 does not beat no profile under Qwen (\SecondJudgeQwenGain{})
+or Gemma (\SecondJudgeGain{}; 95\% intervals). Some rule comparisons
+change significance across judges (supplement). On LaMP-7 records mislead the reader, so
+rules that admit fewer of them beat top-5 and none beats no profile. Auditing one fixed rule (top-1, top-5 or detector top-5) with a per-draw
+bound ships it in \threeFixLttDep\% of LaMP-3 draws at $\alpha=0.2$, whereas a
+calibrated rule always ships its most permissive safe setting. The 14B table and LaMP-2 pilot are in the supplement.
+
+The mean past rating alone retains \MeanRatingKept{} of the 7B gain
+(90\% interval), below top-5 by \MeanRatingDelta{}.
+This statistic contains personal information despite sending no record text.
+
+\paragraph{Exposure needed and exposure under shift.}
+The hindsight oracle keeps utility within $\varepsilon$ for \qaOrSuff\%,
+\threeOrSuff\% and \sevenOrSuff\% of users, the empty set alone suffices for
+\qaOrEmpty\%, \threeOrEmpty\% and \sevenOrEmpty\%, and the oracle admits a
+flagged record for only \qaOrNeeds\%, \threeOrNeeds\% and \sevenOrNeeds\% of
+users. The minimality gap of top-5 (\qaOrSimKGap{}, \threeOrSimKGap{} and
+\sevenOrSimKGap{} records) is therefore almost its whole exposure: these
+tasks rarely need a disclosing record. Calibrating on users with short profiles and testing on long ones, or the
+reverse, exceeds $\alpha$ by up to \qaShiftMain{}, \threeShiftMain{} and
+\sevenShiftMain{} records for our four rules, against at least
+\qaShiftRand{} below $\alpha$ for random splits of the same size. Calibrating
+separately in bins fixed by the training median keeps mean test exposure
+below $\alpha$, given exchangeability within each bin. Rules
+built on our necessity score, whose cross-validated Spearman correlation with
+counterfactual gains is only \qaNecSpearman{}, \threeNecSpearman{} and
+\sevenNecSpearman{}, fail worse under shift (up to \sevenShiftNec{} on
+LaMP-7) and never beat similarity.
+
+An illustrative severity sensitivity assigns weight 2 to health, mental-health,
+sexual-orientation, race/nationality or finance flags and 1 to other flags.
+At $\alpha=0.2$, recalibrated cleared similarity on LaMP-3 admits
+\threeWeightedSize{} records at weighted loss \threeWeightedLoss{}, versus
+\threeCountSize{} records at count loss \threeCountLoss{} (300 splits).
+These policy weights are not a validated harm scale; full results are in the supplement.

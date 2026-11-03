@@ -1,0 +1,12 @@
+numpy
+scipy
+scikit-learn
+pandas
+matplotlib
+requests
+rank_bm25
+rouge-score
+presidio-analyzer
+spacy
+sentence-transformers
+torch

@@ -1,0 +1,118 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,listings}
+\usepackage[hidelinks]{hyperref}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,keepspaces=true}
+\input{generated/numbers}
+\title{Supplement: Exposure-Controlled Data Minimization for Personalized LLM Prompts}
+\author{Anonymous submission}
+\date{}
+\begin{document}
+\maketitle
+\section{Scope and interpretation}
+All disclosure measurements are relative to Qwen and Gemma auditors, not
+human-validated privacy or harm rates. The bound concerns expected profile
+exposure for an exchangeable user. Counting the always-sent query as one
+record yields $E_{\rm total}=E_{\rm profile}+a(q)$ and hence an expected
+bound of $\alpha+1$, because $0\leq a(q)\leq1$; query disclosure prevalence
+was not measured. A query-only prompt is not a zero-loss total-prompt fallback.
+
+\section{Additional readers and rating-only controls}
+Table~\ref{tab:14b} gives the 14B results moved out of the main table.
+The 14B run uses \FourteenN{} users; the main 7B run uses \threeNReader{}. Comparisons across
+readers are therefore not paired estimates of a model-size effect.
+All significance marks and corresponding loss/gain claims use two-sided
+90\% user-bootstrap intervals. Non-inferiority requires the lower 90\%
+bound of the retained-gain ratio to exceed 75\%. Descriptive effect-size
+intervals use 95\%; exploratory rule-by-target comparisons are unadjusted.
+\begin{table}[ht]
+\centering\small
+\caption{LaMP-3 with Qwen2.5-14B: exposure, admitted records and utility.
+Marks have the same definitions as Table 1 of the paper.}
+\label{tab:14b}
+\input{generated/tab_14b}
+\end{table}
+
+The mean-rating control sends the arithmetic mean of \emph{all} available
+past profile ratings, rounded to four decimal places, followed by the
+unchanged target review and rating instruction. It sends no past review
+text or individual past ratings. The reader, backend, temperature, seed
+and two-token generation limit match the main 7B evaluation. The statistic
+is still personal data: its zero record-text count is not a privacy guarantee.
+Paired bootstrap resampling uses 2,000 user samples and seed 20261005.
+\input{generated/revision-results}
+
+\section{LaMP-2 pilot}
+A separate \twoPilotN{}-user Qwen2.5-14B pilot increased accuracy from \twoPilotNone{} to \twoPilotTop{},
+a gain of \twoPilotGain{} (95\% interval). This passed the declared
+go criterion (gain at least 0.05 with a positive lower bound). The 150-user
+extension is incomplete; this is preliminary task-selection evidence,
+not independent confirmation. The endpoint-backed pilot is not silently
+combined with a different backend. A separate \qaPilotN{}-user LaMP-QA
+pilot with the 14B reader had gain \qaPilotGain{} under the Qwen rubric judge
+(95\% interval); it is also preliminary.
+
+\section{Severity sensitivity and repeated disclosures}
+The exploratory severity loss assigns 2 to a record with any health,
+mental-health, sexual-orientation, race/nationality or finance union flag,
+1 to another flagged record, and 0 otherwise. Overlapping categories use
+the maximum weight. With a five-record cap the loss bound is 10.
+Weights are illustrative policy choices, not a validated harm scale or
+legal classification. At the same numerical target the units differ from
+uniform counts. The table uses 300 matched random calibration/test halves,
+the original cleared-rule grid and union labels; numbers are average
+held-out losses, not confidence bounds. No utility conclusion follows
+from these admission counts.
+\input{generated/tab_weighted_revision}
+
+Real multi-query cumulative distinct disclosures are not measured. The
+artifact contains a limited synthetic sensitivity: independently shuffled
+rankings of the same audited top-eight pool for up to ten arrivals, with
+the original query-specific scores fixed. On LaMP-3 at $\alpha=0.5$,
+single-prompt calibration produces \CumulativeSingleOne{} unique flagged records at one
+arrival and \CumulativeSingleTen{} at ten; calibrating the cumulative loss directly gives
+\CumulativeCalibratedTen{} at ten. There are no new queries, retrieval beyond the fixed pool,
+or measured utility. These results do not establish safety for adaptive
+interaction. Linearity of expectation gives a $T\alpha$ bound on record
+occurrences only when each prompt's marginal assumptions remain valid;
+distinct records are at most those occurrences, with no individual-user guarantee.
+
+\section{Human audit status}
+No human annotations have been completed. Two independent blind annotators
+and human adjudication are required before reporting precision/recall or a
+human-calibrated operating point. The existing 120-record stratified packet
+has Gemma coverage on only 96 records and contains no fully labelled user
+pool. Its descriptive metrics cannot identify an exact operating-point
+shift. Missing labels are bounded, never treated as negative labels.
+Full top-eight pools from disjoint calibration and test users are required;
+scores and the threshold grid must remain frozen. The private annotation
+workflow checks category consistency, independence attestations and
+adjudication. Model repeatability below does not replace human validation.
+A second prepared packet covers all eight candidates of 60 uniformly sampled
+LaMP-3 users (480 records per annotator), with 30 calibration and 30 disjoint
+test users fixed before annotation. Rule and grid hashes prevent changes
+during this study. It can identify a small-cohort operating-point shift after
+genuine annotation; it currently contains zero labels and provides no human result.
+
+\section{Auditor and judge reproducibility}
+Each auditor receives one displayed record per call. Record text is truncated
+at 60 words for LaMP-3, 40 for LaMP-7 and 90 for LaMP-QA; LaMP-3 retains its
+rating prefix. Both auditors use greedy decoding (temperature 0), seed 0,
+a 40-token output limit and JSON output. Qwen is served by Ollama 0.30.8;
+Gemma uses its bundled llama.cpp server with the same local GGUF weights,
+\texttt{--jinja}, an 8192-token total context and four slots. The original
+parser filters category names and maps malformed replies to an empty list;
+repeat agreement therefore measures the complete model-and-parser pipeline.
+The second judge uses Gemma with the same rubric prompt and 40-token limit
+as the Qwen judge. Scores are clamped to 0--2, truncated to the rubric length,
+missing entries padded with zero, and malformed replies scored zero.
+\input{generated/auditor-digests}
+
+\subsection*{Exact auditor prompt template}
+The placeholder \texttt{\{text\}} is the displayed record. Doubled braces
+in these Python format templates escape literal JSON braces.
+\lstinputlisting{generated/auditor-prompt.txt}
+\subsection*{Exact judge prompt template}
+Each aspect is its numbered name and reason truncated to 40 words.
+\lstinputlisting{generated/qa-judge-prompt.txt}
+\end{document}

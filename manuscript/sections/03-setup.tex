@@ -1,0 +1,54 @@
+\section{Experimental Setup}
+\label{sec:setup}
+\paragraph{Tasks and users.}
+We use three tasks with real user profiles and one query per user.
+LaMP-QA~\cite{salemi2025lampqa} (Lifestyle and Personal Development,
+validation) asks for a long answer to a user's question given the user's
+earlier posts and scores the share of user-specific rubric aspects the answer
+addresses. LaMP-3 (product rating) and LaMP-7 (tweet
+paraphrasing)~\cite{salemi2024lamp}, user-based dev splits, are scored by
+$1-|\text{error}|/4$ and ROUGE-L. Per task, deduplicated users are drawn in a
+fixed random order: 120 training users fit the scores and grids, disjoint
+evaluation users are audited (\qaNEval{}, \threeNEval{} and \sevenNEval{}),
+and \qaNReader{}, \threeNReader{} and \sevenNReader{} of them receive reader
+calls for every candidate set. Validity is measured over 1000 random halvings into calibration and test
+users, utility by 2-fold cross-fitting over 200 partitions with user-bootstrap
+intervals. No test user touches a score, a grid or a threshold.
+
+\paragraph{Labels and models.}
+Two auditors label every top-8 candidate with the self-disclosure taxonomy of
+Dou et al.~\cite{dou2024reducing} (19 categories merged into 14),
+Qwen2.5-7B-Instruct and Gemma-2-9B, one call per record. A record counts as
+flagged when either auditor flags it, and these \emph{union labels} are used
+for calibration and for every exposure we report unless stated. No human
+labels exist. The reader is Qwen2.5-7B-Instruct (4-bit, greedy), standing in
+for the provider's model, with Qwen2.5-14B on the first \FourteenN{} LaMP-3
+users and Llama-3.1-8B on the first \threeLlamaN{} as second readers. For
+LaMP-QA, Qwen-7B applies the benchmark rubric; Gemma-2-9B independently
+rescores all 3,184 saved answers for 150 users as a judge-sensitivity check.
+Both are model judgments.
+Candidates are the 20 records most similar to the query under a MiniLM
+encoder, rules choose among the top 8, and $K=5$.
+
+\paragraph{Rules, baselines and tests.}
+\emph{Similarity top-$k$} and \emph{similarity threshold} rank by encoder
+similarity. The \emph{detector filter} drops records flagged by
+Presidio~\cite{presidio2026software} entities or a small disclosure lexicon,
+both written before any audit, and ranks the rest by similarity. The
+\emph{cleared similarity} rule is Eq.~\eqref{eq:gate} with a logistic
+sensitivity proxy on the MiniLM embedding and detector counts, fitted to the
+Qwen auditor's labels of training users. Rules built on a learned necessity score are omitted because the score was
+near random. On LaMP-3, where each record carries the user's past rating,
+we compare the full-history mean rating alone and three field-level baselines that send the top-5 records with ratings
+only, with the text of detector-flagged records removed, or with the text of
+union-flagged records removed, the last an upper reference no on-device gate
+can compute. Where top-5 beats no profile, we report the plug-in share of its
+gain a rule keeps with a user-bootstrap interval, and call a rule
+non-inferior when the lower 90\% bound of that share exceeds 75\%, a margin
+fixed before the 14B run. All significance marks and corresponding loss/gain claims use two-sided 90\% intervals; descriptive effect intervals use 95\%. A rule whose 90\% interval of the difference to
+top-5 lies below zero is a significant loss. Cleared similarity at
+$\alpha=0.5$ and $\alpha=0.2$ with every reader are the pre-specified
+confirmatory cells, and the remaining rule-by-target cells are exploratory
+and not corrected for multiplicity. The oracle searches up to three records
+with $\varepsilon=0.05$ on \threeOrN{} users per task, using the Qwen labels
+during the search and union labels in the reported exposure.

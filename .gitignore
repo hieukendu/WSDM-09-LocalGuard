@@ -1,0 +1,30 @@
+# Private and regenerated data
+artifact/data/raw/
+artifact/data/processed/
+artifact/results/llm_cache/
+artifact/results/handcheck/
+artifact/results/*_audit.json
+artifact/results/*_audit_*.json
+!artifact/results/human_audit_aggregate.json
+artifact/results/*_detect.json
+artifact/results/*_rules.json
+artifact/results/*_gate_report.json
+artifact/results/*_reader_utility*.json
+artifact/results/*_cf*.json
+artifact/results/*_contexts*.json
+artifact/results/*_raw*.json
+artifact/logs/
+logs/
+
+# Local environments and model files
+.venv/
+venv/
+__pycache__/
+*.pyc
+models/
+
+# Private audit material
+PRIVATE_KEY.json
+PRIVATE_COHORTS.json
+FROZEN_INPUTS.json
+adjudication.csv

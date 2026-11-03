@@ -1,0 +1,86 @@
+\section{Risk-Controlled Record Admission}
+\label{sec:method}
+
+\paragraph{Threat model.}
+A user's profile $P$ of personal records stays on the device, together with
+a retriever, the admission rule and its scores. For a query $q$ the rule
+places a set $A(q,P)$ of at most $K$ records from a candidate pool $C(q,P)$
+in the prompt of a reader LLM run by a remote provider. Whatever is admitted
+leaves the device, and the provider is assumed to see the full prompt. The
+utility $U(q,S)$ of a set $S$ is the task metric of the reader's output.
+
+\paragraph{Exposure.}
+An \emph{auditor} sets $a(r)=1$ when record $r$ contains a self-disclosure,
+a statement revealing personal information about the author or a person close
+to them~\cite{dou2024reducing}. We control two losses of an admitted set, the
+count $E(S)=\sum_{r\in S}a(r)\in[0,K]$ and the indicator
+$Z(S)=\mathbb{1}[E(S)\ge1]$ that the prompt carries any disclosure. The
+auditor may be a large model or a human annotator. It labels a sample of
+consenting calibration users offline and never runs on the device.
+This is incremental profile exposure, excluding the query sent by every
+rule, even the empty rule. Counting a query as one additional record gives
+$E_{\rm total}=E(S)+a(q)$ and only $\mathbb{E}E_{\rm total}\le\alpha+1$
+without a query audit. A total-prompt budget needs query labels and an
+abstention or local-only fallback.
+
+\paragraph{Admission families.}
+We calibrate any family $\{A_\lambda\}$ with an ordered parameter on a finite
+grid $\lambda_0<\dots<\lambda_J$ and $A_{\lambda_0}=\emptyset$. A
+\emph{top-$k$} rule admits the $k$ highest-scoring candidates. A
+\emph{threshold} rule admits up to $K$ candidates whose score is at least a
+cut-off that decreases along the grid, so the number of records adapts to
+the query. A \emph{cleared} rule uses an on-device sensitivity proxy
+$s(r)\in[0,1]$ and admits
+\begin{equation}
+A_\lambda(q,P)=\operatorname{top}\text{-}K_{g}\,\{r\in C(q,P): s(r)\le\lambda\},
+\label{eq:gate}
+\end{equation}
+where $g$ ranks candidates, by similarity to $q$ in our main rule. Top-$k$
+and threshold rules are nested. In a cleared rule a newly cleared record can
+displace a less highly ranked one, so we control the running maximum
+$L(\lambda_j)=\max_{j'\le j}\ell(A_{\lambda_{j'}})$ of the loss $\ell\in\{E,Z\}$,
+which is nondecreasing, bounded by $B=K$ for $E$ and $B=1$ for $Z$, and never
+below $\ell$.
+
+\paragraph{Calibration.}
+Let $L_1,\dots,L_n$ be the loss curves of $n$ audited calibration users and
+$\hat R_n(\lambda)=\frac1n\sum_i L_i(\lambda)$. For a target $\alpha$ we deploy
+\begin{equation}
+\hat\lambda=\max\Bigl\{\lambda_j:\ \tfrac{n}{n+1}\hat R_n(\lambda_j)+\tfrac{B}{n+1}\le\alpha\Bigr\},
+\label{eq:crc}
+\end{equation}
+and $\hat\lambda=\lambda_0$ when no grid point qualifies.
+
+\begin{proposition}[Exposure control~{\cite[Thm.~1]{angelopoulos2024conformal}}]
+\label{prop:cert}
+Suppose the grid, the family and its scores are fixed using users independent
+of the calibration and test users, and the $n$ calibration users and a new
+user are exchangeable. Then
+\[
+\mathbb{E}\bigl[\ell(A_{\hat\lambda}(q_{n+1},P_{n+1}))\bigr]\le\alpha.
+\]
+\end{proposition}
+
+This is conformal risk control with the direction of monotonicity flipped, and
+we claim no new theory (proof and a synthetic check in the artifact). What the
+tool adds to data minimization is a single, rule-agnostic way to set how much a
+gate may admit. The exchangeable unit is the user. A poor ranking lowers
+$\hat\lambda$ and utility while the bound still holds. Auditing one fixed rule
+with a confidence bound is the one-point grid, which can only pass or fail.
+For independent calibration users from the deployment distribution,
+Learn-then-Test~\cite{angelopoulos2025learn} gives probability $1-\delta$
+over the calibration draw, using
+Hoeffding--Bentkus p-values~\cite{bates2021distribution}, testing grid points
+in increasing order. Because a bound on labels $a'$ implies a bound on any
+labels $a\le a'$, calibrating on the union of several auditors' labels
+bounds the exposure measured by each of them.
+
+\paragraph{Minimality gap.}
+Within the top-8 candidates $C_8$, the minimal sufficient set
+$S^\star_\varepsilon=\arg\min\{E(S): S\subseteq C_8,\ U(q,S)\ge U(q,C)-\varepsilon\}$
+is the least exposing set that keeps the utility of the whole pool within
+$\varepsilon$, and the minimality gap of a rule is
+$\mathbb{E}[E(A)]-\mathbb{E}[E(S^\star_\varepsilon)]$. Minimality refers to auditor-flagged records only, never to all personal data
+in a prompt. We approximate $S^\star_\varepsilon$ by greedy extensions of up to
+three records scored against the gold output, a hindsight reference no
+deployable rule can match.

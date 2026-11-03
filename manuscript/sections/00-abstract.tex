@@ -1,0 +1,16 @@
+\begin{abstract}
+Personalized LLM assistants expose personal history when retrieved records
+enter a provider's prompt. We calibrate record admission with conformal risk
+control, bounding auditor-relative expected \emph{profile exposure} per prompt
+by $\alpha$ for users exchangeable with calibration users. Any ranking can be
+used inside the monotone admission rule. Counting the excluded query as one
+record gives a worst-case total-prompt bound of $\alpha+1$.
+On LaMP-QA, LaMP-3 and LaMP-7, calibrating on one LLM auditor can exceed the
+target under another auditor's labels; union calibration controls both by
+construction. On LaMP-3, where retrieval helps, a strict exposure budget
+costs utility across three readers. At $\alpha=0.5$, cleared similarity keeps
+\FourteenCSimKeptD{} of a 14B reader's gain with less than half the flagged
+records of top-5 retrieval. Removing flagged text while preserving ratings
+retains most of that gain. These are model-audited, single-query results;
+human validation and real multi-query disclosure measurement remain open.
+\end{abstract}

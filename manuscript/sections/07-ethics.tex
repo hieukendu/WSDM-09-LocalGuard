@@ -1,0 +1,30 @@
+\section*{Ethical Considerations}
+The method reduces the personal data a personalized assistant sends to a
+model provider and makes the residual exposure a quantity a deployer can set
+and verify. Its limits must be stated with it. The bound covers what the
+auditors flag, our auditors are two small LLMs, and no human labels exist, so
+a human audit of the calibration sample is needed before any deployment. The
+bound is an expectation over users exchangeable with the calibration sample,
+individual users can be exposed more than $\alpha$, and it covers one prompt
+per user. Summing marginal bounds gives $T\alpha$ for expected cumulative
+record occurrences only if every prompt satisfies the calibration assumptions.
+Distinct disclosures are at most this sum, but this is neither a per-user
+guarantee nor validation for adaptive queries, which we do not measure.
+The guarantee can fail when
+deployment users differ from calibration users. A
+small $\alpha$ is a quantity of leakage and never an absence of it,
+record-level labels miss inferences drawn from several records, and the
+user's own query, which is always sent, is outside the measure. Calibration
+requires that an auditor read the records of calibration users, who must
+consent under a data agreement that deployment users do not need. We use only
+existing public research benchmarks (LaMP under CC BY-NC-SA with source
+licences, LaMP-QA with no declared licence over StackExchange posts that
+StackExchange distributes under CC BY-SA) and recruit no participants. The
+per-record labels we derive mark health, finance, sexual orientation and
+other disclosures of real, pseudonymous authors and can be joined back to the
+public benchmarks, so we treat them as sensitive derived data and will not
+release them, nor any benchmark text or cached prompt. The released artifact
+therefore reproduces the tables from the labels only by re-running the
+auditors on the public benchmarks, and lists what it excludes. A deployed system must obtain consent
+for retaining personal history and honor deletion, and a score is no
+substitute for user control over what is shared.

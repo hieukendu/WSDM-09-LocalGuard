@@ -1,0 +1,12 @@
+{
+ "with_profile_feature": {
+  "worst_excess": 0.1656444444444447,
+  "frac_cells_above": 0.16666666666666666,
+  "corr_g_profile": 0.32870465317978687
+ },
+ "without_profile_feature": {
+  "worst_excess": 0.038933333333333264,
+  "frac_cells_above": 0.4166666666666667,
+  "corr_g_profile": 0.4922907021189255
+ }
+}

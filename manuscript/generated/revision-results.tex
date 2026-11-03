@@ -1,0 +1,45 @@
+The mean-only utility is 0.893 on 450 users, versus 0.883 without a profile and 0.922 with top-5. It retains 26.8\% of the gain (90\% interval 1.3--48.4\%); its difference from top-5 is -0.029 [-0.041, -0.017] (90\%).
+
+\section{Independent-family judge and fresh auditor repeats}
+
+Gemma-2-9B rescored all 3184 saved main-reader answers for 150 LaMP-QA users, including every admission context. Top-5 minus no-profile utility is -0.006 [-0.031, +0.022] under Gemma, versus +0.016 [-0.005, +0.040] under Qwen (95\% paired user-bootstrap intervals; 2,000 shared resamples, seed 20261005). This tests model-rubric sensitivity, not human correctness.
+
+Gemma returned 3184/3184 complete valid score vectors; 0 replies were malformed, 0 had the wrong length, and 0 required value coercion or clipping. 0 original replies were unavailable for this parsing check.
+
+Qwen returned 3043/3184 complete valid score vectors; 0 replies were malformed, 101 had the wrong length, and 42 required value coercion or clipping. 0 original replies were unavailable for this parsing check.
+
+These diagnostic categories can overlap. The original scoring parser is retained; the independent Gemma results therefore provide a check with complete valid rubric vectors.
+
+\begin{center}\small\begin{tabular}{lrrr}\toprule
+
+Rule & $\alpha$ & Qwen judge & Gemma judge \\ \midrule
+
+No profile & -- & 0.608 & 0.454 \\
+
+Top-5 & -- & 0.624 & 0.448 \\
+
+Similarity top-$k$ & 0.2 & 0.608 & 0.454 \\
+
+Similarity threshold & 0.2 & 0.609 & 0.457 \\
+
+Detector filter & 0.2 & 0.607 & 0.452 \\
+
+Cleared similarity & 0.2 & 0.628 & 0.455 \\
+
+Similarity top-$k$ & 0.5 & 0.606$^{-}$ & 0.434 \\
+
+Similarity threshold & 0.5 & 0.610 & 0.457 \\
+
+Detector filter & 0.5 & 0.598$^{-}$ & 0.436 \\
+
+Cleared similarity & 0.5 & 0.614 & 0.439 \\
+
+\bottomrule\end{tabular}\end{center}
+
+Cross-fitted utility with policies, disclosure labels, grids and splits held fixed. Marks compare each rule with top-5 under the same judge using 90\% intervals. Changing the judge does not refit the gate or change the exposure calibration.
+
+Fresh qwen2.5:7b calls agree on 96/96 binary flags and 96/96 complete category sets with the original outputs (32 uniformly sampled top-eight evaluation records per task; seed 20261005). The repeat cache is separate and does not read the original cache; interrupted repeats resume only their own calls.
+
+Fresh gemma2:9b calls agree on 96/96 binary flags and 96/96 complete category sets with the original outputs (32 uniformly sampled top-eight evaluation records per task; seed 20261005). The repeat cache is separate and does not read the original cache; interrupted repeats resume only their own calls.
+
+Agreement on this sample is not proof of determinism on all records and does not measure label validity.

@@ -1,0 +1,45 @@
+\ifdefined\pdfminorversion\pdfminorversion=7\fi
+%% LocalGuard -- WSDM 2027 short paper (anonymous, review mode)
+\documentclass[sigconf,anonymous,review,balance=false]{acmart}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tikz,pifont}
+\copyrightyear{2027}\acmYear{2027}\setcopyright{acmlicensed}
+\acmConference[WSDM '27]{Proceedings of the 20th ACM International Conference
+  on Web Search and Data Mining}{February 15--19, 2027}{}
+\acmBooktitle{Proceedings of the 20th ACM International Conference on Web
+  Search and Data Mining (WSDM '27)}
+\acmSubmissionID{109}\acmDOI{}\acmISBN{}
+\newcommand{\system}{LocalGuard}
+\newtheorem{proposition}{Proposition}
+\input{generated/numbers}
+\begin{document}
+\raggedbottom
+\title{Exposure-Controlled Data Minimization for Personalized LLM Prompts}
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}\city{}\country{}}
+\input{sections/00-abstract}
+\begin{CCSXML}
+<ccs2012><concept><concept_id>10002978.10003029.10011150</concept_id>
+<concept_desc>Security and privacy~Privacy protections</concept_desc>
+<concept_significance>500</concept_significance></concept>
+<concept><concept_id>10002951.10003317.10003331.10003271</concept_id>
+<concept_desc>Information systems~Personalization</concept_desc>
+<concept_significance>500</concept_significance></concept></ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Security and privacy~Privacy protections}
+\ccsdesc[500]{Information systems~Personalization}
+\keywords{data minimization, personalization, conformal risk control, retrieval-augmented generation, privacy}
+\maketitle
+\input{sections/01-introduction}
+\input{sections/figure-main}
+\input{sections/02-method}
+\input{sections/table-main}
+\input{sections/03-setup}
+\input{sections/04-results}
+\input{sections/05-related}
+\input{sections/06-conclusion}
+\input{sections/07-ethics}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}

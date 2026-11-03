@@ -1,0 +1,29 @@
+\begin{tabular}{lrrr}
+\toprule
+ & \multicolumn{3}{c}{LaMP-3, 14B} \\
+\cmidrule(lr){2-4}
+Admission rule & Exp. & Rec. & Util. \\
+\midrule
+\multicolumn{4}{l}{\emph{Uncalibrated, whole records}} \\
+No profile & 0.00 & 0.0 & 0.863 \\
+Similarity top-5 & 0.90 & 5.0 & 0.928 \\
+Detector filter top-5 & 0.53 & 4.0 & 0.916 \\
+\midrule
+\multicolumn{4}{l}{\emph{Uncalibrated, rating summaries or text removal}} \\
+Ratings only & 0.00 & 5.0 & 0.909$^{-}$ \\
+Redact detector-flagged text & 0.42 & 5.0 & 0.932$^{\dagger}$ \\
+Redact auditor-flagged text & 0.00 & 5.0 & 0.930$^{\dagger}$ \\
+\midrule
+\multicolumn{4}{l}{\emph{Union calibration: CRC, $\alpha=0.2$}} \\
+Similarity top-$k$ & 0.09 & 0.5 & 0.888$^{-}$ \\
+Similarity threshold & 0.18 & 1.3 & 0.892$^{-}$ \\
+Detector filter & 0.10 & 1.0 & 0.900$^{-}$ \\
+Cleared similarity & 0.14 & 3.2 & 0.907$^{-}$ \\
+\midrule
+\multicolumn{4}{l}{\emph{Union calibration: LTT, $\alpha=0.2$, $\delta=0.1$}} \\
+Similarity top-$k$ & 0.00 & 0.0 & 0.863$^{-}$ \\
+Similarity threshold & 0.09 & 0.5 & 0.884$^{-}$ \\
+Detector filter & 0.00 & 0.0 & 0.865$^{-}$ \\
+Cleared similarity & 0.05 & 1.8 & 0.897$^{-}$ \\
+\bottomrule
+\end{tabular}

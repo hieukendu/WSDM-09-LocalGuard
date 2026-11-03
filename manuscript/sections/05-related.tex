@@ -1,0 +1,28 @@
+\section{Related Work}
+\label{sec:related}
+Data minimization has been operationalized for recommendation by measuring
+how much user data a model needs~\cite{biega2020operationalizing} and
+formalized for learning as a constraint on retained
+data~\cite{ganesh2025data}. For LLM prompts, Zhou et
+al.~\cite{zhou2026operationalizing} search for the least disclosing variant of
+one prompt, AirGapAgent~\cite{bagdasarian2024airgapagent}, SP-Mem~\cite{wang2026spmem}
+and MemPrivacy~\cite{chen2026memprivacy} decide which personal fields a task
+needs, PAPILLON~\cite{li2025papillon} and Salemi and
+Zamani~\cite{salemi2026improving} split work between a local and a remote
+model, MINIM~\cite{yu2026minim} scores necessity and sensitivity with fixed
+thresholds, and Platnick et al.~\cite{platnick2025structured} select
+data-minimal facts by submodular maximization. PURPLE~\cite{du2026purple} and
+ENOUGH~\cite{liu2026enough} learn profile selection on LaMP~\cite{salemi2024lamp}.
+Our cleared rule adds a calibrated exposure threshold to MINIM's design;
+the oracle extends minimal-profile comparisons to audited record sets.
+Conformal risk control and Learn-then-Test~\cite{angelopoulos2024conformal,bates2021distribution,angelopoulos2025learn}
+have certified generation risk in RAG~\cite{kang2024crag},
+factuality~\cite{mohri2024language,quach2024conformal}, harm and cost
+trade-offs~\cite{overman2025conformal,laufer2023pareto}, agent
+actions~\cite{feng2026cora,rahman2026beyond} and re-identification
+audits~\cite{huang2026conformal}. Closest are CORA~\cite{feng2026cora}, which
+gates agent actions with privacy as one harm, and Chakraborty et
+al.~\cite{chakraborty2026principled}, who keep retrieved RAG context above a
+lower bound on relevance, the mirror image of our upper bound on admitted
+sensitive content. Our record-count exposure excludes joint inferences~\cite{staab2024beyond} and contextual norms studied by ConfAIde~\cite{mireshghallah2024confaide},
+PrivacyLens~\cite{shao2024privacylens} and AgentDAM~\cite{zharmagambetov2025agentdam}.
