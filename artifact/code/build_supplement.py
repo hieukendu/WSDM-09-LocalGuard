@@ -15,6 +15,9 @@ human_audit human_exposure lamp2_pilot make_assets make_secondary_tables oracle 
 prep prep_extend qa_pilot replication run secondary_exposure cumulative_exposure
 shift_mech sim_crc validate_audit handcheck_sheet test_human_audit
 test_secondary_exposure test_human_exposure test_supplement build_supplement""".split()
+SHELL = """chain10_70b chain11_lamp2 chain11a_lamp2_laptop chain3 chain4_cpp chain4_qwen
+chain5_lamp3_600 chain6 chain7 chain8 chain9_14b download_data extend_users pipeline_rest
+reanalyze_1008 repl_chain2 repl_chain2b""".split()
 RESULTS = [f"{task}_{kind}.json" for task in ["lampqa", "lamp3", "lamp7"]
            for kind in ["analysis", "shift_mech"]] + [
     "lamp3_analysis_qwen25_14b.json", "lamp3_analysis_llama31_8b.json", "lamp3_analysis_300users.json",
@@ -60,6 +63,8 @@ def main():
         selected[f"artifact/{name}"] = f"artifact/{name}"
     for name in CODE:
         selected[f"artifact/code/{name}.py"] = f"artifact/code/{name}.py"
+    for name in SHELL:
+        selected[f"artifact/code/{name}.sh"] = f"artifact/code/{name}.sh"
     for name in RESULTS:
         selected[f"artifact/results/{name}"] = f"artifact/results/{name}"
     if args.include_manuscript:

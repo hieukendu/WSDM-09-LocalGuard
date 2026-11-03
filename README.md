@@ -40,6 +40,11 @@ python artifact/code/make_secondary_tables.py
 
 Full reader/auditor reruns require the model services and will create private caches under `artifact/results/llm_cache/`.
 
+For a server with 20 GB of GPU memory, use the documented Q4 models one at a time. Keep
+`WORKERS=1` and the model server at one slot for the Qwen2.5-14B run; Qwen2.5-7B,
+Gemma2-9B and Llama3.1-8B can use more concurrency only after checking `nvidia-smi`.
+The optional Llama-3.3-70B held-out auditor does not fit in 20 GB in Q4 form.
+
 ## Human audit status
 
 The completed LaMP-3 human audit is summarized in `PUBLIC-STATUS.md` and `artifact/HUMAN-AUDIT-RESULT.md`. Individual human annotations and the private join key are excluded from this repository.
