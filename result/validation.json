@@ -1,0 +1,20 @@
+{
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s artifact/code -p 'test_*.py'",
+    "tests_run": 18,
+    "failures": 0,
+    "errors": 0,
+    "status": "passed"
+  },
+  "synthetic_crc": {
+    "command": "python3 artifact/code/sim_crc.py",
+    "configurations": 48,
+    "violations": 0,
+    "max_monotone_loss_minus_alpha": -0.024749999999999994,
+    "status": "passed"
+  },
+  "scope": {
+    "human_audit": "skipped_already_completed",
+    "model_70b": "skipped_by_user"
+  }
+}

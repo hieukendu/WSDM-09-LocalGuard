@@ -1,0 +1,18 @@
+{
+  "copied_aggregate_outputs": [
+    "lamp3_baselines_qwen25_7b.json",
+    "lamp3_secondary_exposure.json",
+    "sim_crc.json"
+  ],
+  "raw_and_cache_policy": "raw rows, prompts, labels, and caches remain under artifact/results and are not copied into result",
+  "run_date": "2026-11-03",
+  "status": {
+    "fixed_gate_comparator": "available_from_preexisting_aggregate",
+    "human_audit": "skipped_by_user_already_completed",
+    "lamp3_grid_envelope": "completed",
+    "matched_calibrated_redaction": "not_started",
+    "model_70b": "postponed_by_latest_user_instruction; model downloaded but no 70B inference run",
+    "oracle_epsilon_and_exhaustive_slice": "not_started",
+    "parser_accounting": "completed"
+  }
+}

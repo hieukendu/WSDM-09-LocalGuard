@@ -1,0 +1,240 @@
+{
+  "interpretation": "Training-fixed cleared-similarity thresholds; not a new utility-aware selector and not a calibrated redaction family.",
+  "status": "completed_from_existing_aggregate",
+  "tasks": {
+    "lamp3": {
+      "closest_to_target": {
+        "0.2": {
+          "closest_rule_by_union_exposure": "cert_fix2",
+          "mean_admitted_records": 3.1844444444444444,
+          "union_exposure": 0.15333333333333332,
+          "utility_mean": 0.9027777777777778
+        },
+        "0.5": {
+          "closest_rule_by_union_exposure": "cert_fix4",
+          "mean_admitted_records": 4.493333333333333,
+          "union_exposure": 0.4088888888888889,
+          "utility_mean": 0.9188888888888889
+        }
+      },
+      "rows": [
+        {
+          "any_union": 0.051111111111111114,
+          "exposure_gemma": 0.03777777777777778,
+          "exposure_qwen": 0.042222222222222223,
+          "exposure_union": 0.05555555555555555,
+          "mean_admitted_records": 1.8111111111111111,
+          "rule": "cert_fix1",
+          "sensitive_union": 0.017777777777777778,
+          "utility_mean": 0.88
+        },
+        {
+          "any_union": 0.14,
+          "exposure_gemma": 0.12222222222222222,
+          "exposure_qwen": 0.08666666666666667,
+          "exposure_union": 0.15333333333333332,
+          "mean_admitted_records": 3.1844444444444444,
+          "rule": "cert_fix2",
+          "sensitive_union": 0.03333333333333333,
+          "utility_mean": 0.9027777777777778
+        },
+        {
+          "any_union": 0.22666666666666666,
+          "exposure_gemma": 0.2311111111111111,
+          "exposure_qwen": 0.14666666666666667,
+          "exposure_union": 0.27111111111111114,
+          "mean_admitted_records": 3.9644444444444447,
+          "rule": "cert_fix3",
+          "sensitive_union": 0.05333333333333334,
+          "utility_mean": 0.9161111111111111
+        },
+        {
+          "any_union": 0.3088888888888889,
+          "exposure_gemma": 0.33111111111111113,
+          "exposure_qwen": 0.24,
+          "exposure_union": 0.4088888888888889,
+          "mean_admitted_records": 4.493333333333333,
+          "rule": "cert_fix4",
+          "sensitive_union": 0.07555555555555556,
+          "utility_mean": 0.9188888888888889
+        },
+        {
+          "any_union": 0.4444444444444444,
+          "exposure_gemma": 0.6133333333333333,
+          "exposure_qwen": 0.4444444444444444,
+          "exposure_union": 0.7133333333333334,
+          "mean_admitted_records": 4.866666666666666,
+          "rule": "cert_fix5",
+          "sensitive_union": 0.12,
+          "utility_mean": 0.9138888888888889
+        },
+        {
+          "any_union": 0.47333333333333333,
+          "exposure_gemma": 0.7488888888888889,
+          "exposure_qwen": 0.5622222222222222,
+          "exposure_union": 0.8577777777777778,
+          "mean_admitted_records": 4.9688888888888885,
+          "rule": "cert_fix6",
+          "sensitive_union": 0.13333333333333333,
+          "utility_mean": 0.9183333333333333
+        }
+      ]
+    },
+    "lamp7": {
+      "closest_to_target": {
+        "0.2": {
+          "closest_rule_by_union_exposure": "cert_fix1",
+          "mean_admitted_records": 2.3233333333333333,
+          "union_exposure": 0.2966666666666667,
+          "utility_mean": 0.3316852628196448
+        },
+        "0.5": {
+          "closest_rule_by_union_exposure": "cert_fix2",
+          "mean_admitted_records": 3.4033333333333333,
+          "union_exposure": 0.67,
+          "utility_mean": 0.3254287035644229
+        }
+      },
+      "rows": [
+        {
+          "any_union": 0.2633333333333333,
+          "exposure_gemma": 0.19,
+          "exposure_qwen": 0.21666666666666667,
+          "exposure_union": 0.2966666666666667,
+          "mean_admitted_records": 2.3233333333333333,
+          "rule": "cert_fix1",
+          "sensitive_union": 0.056666666666666664,
+          "utility_mean": 0.3316852628196448
+        },
+        {
+          "any_union": 0.49333333333333335,
+          "exposure_gemma": 0.38666666666666666,
+          "exposure_qwen": 0.5466666666666666,
+          "exposure_union": 0.67,
+          "mean_admitted_records": 3.4033333333333333,
+          "rule": "cert_fix2",
+          "sensitive_union": 0.12,
+          "utility_mean": 0.3254287035644229
+        },
+        {
+          "any_union": 0.6966666666666667,
+          "exposure_gemma": 0.73,
+          "exposure_qwen": 0.9766666666666667,
+          "exposure_union": 1.17,
+          "mean_admitted_records": 4.3533333333333335,
+          "rule": "cert_fix3",
+          "sensitive_union": 0.2633333333333333,
+          "utility_mean": 0.32775317940128473
+        },
+        {
+          "any_union": 0.7966666666666666,
+          "exposure_gemma": 1.0433333333333332,
+          "exposure_qwen": 1.3366666666666667,
+          "exposure_union": 1.5833333333333333,
+          "mean_admitted_records": 4.83,
+          "rule": "cert_fix4",
+          "sensitive_union": 0.38,
+          "utility_mean": 0.3222266377664657
+        },
+        {
+          "any_union": 0.8366666666666667,
+          "exposure_gemma": 1.2366666666666666,
+          "exposure_qwen": 1.52,
+          "exposure_union": 1.7833333333333334,
+          "mean_admitted_records": 4.95,
+          "rule": "cert_fix5",
+          "sensitive_union": 0.43,
+          "utility_mean": 0.3335978582010124
+        },
+        {
+          "any_union": 0.8733333333333333,
+          "exposure_gemma": 1.42,
+          "exposure_qwen": 1.6933333333333334,
+          "exposure_union": 1.9633333333333334,
+          "mean_admitted_records": 4.993333333333333,
+          "rule": "cert_fix6",
+          "sensitive_union": 0.46,
+          "utility_mean": 0.3290834049438766
+        }
+      ]
+    },
+    "lampqa": {
+      "closest_to_target": {
+        "0.2": {
+          "closest_rule_by_union_exposure": "cert_fix1",
+          "mean_admitted_records": 2.1866666666666665,
+          "union_exposure": 0.12666666666666668,
+          "utility_mean": 0.6284219576719577
+        },
+        "0.5": {
+          "closest_rule_by_union_exposure": "cert_fix3",
+          "mean_admitted_records": 4.126666666666667,
+          "union_exposure": 0.4266666666666667,
+          "utility_mean": 0.6134986772486773
+        }
+      },
+      "rows": [
+        {
+          "any_union": 0.12,
+          "exposure_gemma": 0.1,
+          "exposure_qwen": 0.04666666666666667,
+          "exposure_union": 0.12666666666666668,
+          "mean_admitted_records": 2.1866666666666665,
+          "rule": "cert_fix1",
+          "sensitive_union": 0.02666666666666667,
+          "utility_mean": 0.6284219576719577
+        },
+        {
+          "any_union": 0.28,
+          "exposure_gemma": 0.2866666666666667,
+          "exposure_qwen": 0.12,
+          "exposure_union": 0.3333333333333333,
+          "mean_admitted_records": 3.5866666666666664,
+          "rule": "cert_fix2",
+          "sensitive_union": 0.06,
+          "utility_mean": 0.6165939153439153
+        },
+        {
+          "any_union": 0.36,
+          "exposure_gemma": 0.38,
+          "exposure_qwen": 0.18,
+          "exposure_union": 0.4266666666666667,
+          "mean_admitted_records": 4.126666666666667,
+          "rule": "cert_fix3",
+          "sensitive_union": 0.06666666666666667,
+          "utility_mean": 0.6134986772486773
+        },
+        {
+          "any_union": 0.5333333333333333,
+          "exposure_gemma": 0.6866666666666666,
+          "exposure_qwen": 0.36666666666666664,
+          "exposure_union": 0.7466666666666667,
+          "mean_admitted_records": 4.64,
+          "rule": "cert_fix4",
+          "sensitive_union": 0.16666666666666666,
+          "utility_mean": 0.6150462962962963
+        },
+        {
+          "any_union": 0.6533333333333333,
+          "exposure_gemma": 0.98,
+          "exposure_qwen": 0.6133333333333333,
+          "exposure_union": 1.1,
+          "mean_admitted_records": 4.9,
+          "rule": "cert_fix5",
+          "sensitive_union": 0.26,
+          "utility_mean": 0.620260582010582
+        },
+        {
+          "any_union": 0.7133333333333334,
+          "exposure_gemma": 1.16,
+          "exposure_qwen": 0.8066666666666666,
+          "exposure_union": 1.2866666666666666,
+          "mean_admitted_records": 4.993333333333333,
+          "rule": "cert_fix6",
+          "sensitive_union": 0.3333333333333333,
+          "utility_mean": 0.6266335978835978
+        }
+      ]
+    }
+  }
+}

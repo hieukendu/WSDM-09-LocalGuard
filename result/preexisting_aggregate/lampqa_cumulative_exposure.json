@@ -1,0 +1,80 @@
+{
+  "task": "lampqa",
+  "n_users": 300,
+  "splits": 300,
+  "seed": 20261097,
+  "observed_multi_query_availability": {
+    "raw_entries": 892,
+    "exact_profile_groups": 892,
+    "exact_profile_groups_with_multiple_distinct_queries": 0,
+    "qualification": "exact full-profile equality only; does not establish that different profiles belong to different humans"
+  },
+  "scope": "synthetic arrivals/rankings on real profiles; fixed already-audited top-8 pool, no new query text, no reader utility; not observed multi-query validation",
+  "loss": "unique union-flagged record IDs within user; categories deduplicated separately",
+  "cells": {
+    "0.2|1|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.10713333333333329,
+      "mean_unique_categories": 0.14411111111111097
+    },
+    "0.2|1|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.10713333333333329,
+      "mean_unique_categories": 0.14411111111111097
+    },
+    "0.2|2|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.10713333333333329,
+      "mean_unique_categories": 0.14411111111111097
+    },
+    "0.2|2|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.10617777777777775,
+      "mean_unique_categories": 0.14271111111111096
+    },
+    "0.2|5|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.10713333333333329,
+      "mean_unique_categories": 0.14411111111111097
+    },
+    "0.2|5|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.10617777777777775,
+      "mean_unique_categories": 0.14271111111111096
+    },
+    "0.2|10|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.10713333333333329,
+      "mean_unique_categories": 0.14411111111111097
+    },
+    "0.2|10|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.10617777777777775,
+      "mean_unique_categories": 0.14271111111111096
+    },
+    "0.5|1|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.38524444444444406,
+      "mean_unique_categories": 0.5399777777777779
+    },
+    "0.5|1|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.38524444444444406,
+      "mean_unique_categories": 0.5399777777777779
+    },
+    "0.5|2|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.4191111111111111,
+      "mean_unique_categories": 0.5791333333333335
+    },
+    "0.5|2|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.37217777777777783,
+      "mean_unique_categories": 0.4984888888888889
+    },
+    "0.5|5|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.44139999999999946,
+      "mean_unique_categories": 0.6043999999999999
+    },
+    "0.5|5|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.38099999999999973,
+      "mean_unique_categories": 0.5021777777777777
+    },
+    "0.5|10|single_prompt_calibration": {
+      "mean_unique_flagged_records": 0.44139999999999946,
+      "mean_unique_categories": 0.6043999999999999
+    },
+    "0.5|10|cumulative_calibration": {
+      "mean_unique_flagged_records": 0.38099999999999973,
+      "mean_unique_categories": 0.5021777777777777
+    }
+  }
+}

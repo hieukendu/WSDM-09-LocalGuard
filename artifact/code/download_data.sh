@@ -2,7 +2,9 @@
 # Downloads the public data used in the paper. The UMass host is slow, so large
 # files are fetched with parallel HTTP range requests and then concatenated.
 set -e
-cd "$(dirname "$0")/../data/raw"
+RAW_DIR="$(dirname "$0")/../data/raw"
+mkdir -p "$RAW_DIR"
+cd "$RAW_DIR"
 B=https://ciir.cs.umass.edu/downloads/LaMP
 ranged() { # url out nparts
   local url=$1 out=$2 n=$3

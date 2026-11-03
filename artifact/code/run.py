@@ -11,13 +11,14 @@ import os
 import re
 import sys
 
-from common import (AUDITOR, K, NUM_PREDICT, READER, RES, LLMCache, audit_record,
-                    generate, load_proc, reader_prompt, record_text, utility)
+from common import (AUDITOR, K, NUM_PREDICT, READER, RES, LLMCache, audit_batch,
+                    audit_record, generate, load_proc, reader_prompt, record_text, utility)
 
 M_GATE = 8   # the gate re-ranks the top-8 retrieved records
 N_READER = int(os.environ.get("N_READER", 150))
 M_CF = 6     # counterfactual labels are collected for the top-6 retrieved records
 WORKERS = int(os.environ.get("WORKERS", 4))
+AUDIT_BATCH_SIZE = int(os.environ.get("AUDIT_BATCH_SIZE", 5))
 
 
 def pmap(fn, items):
@@ -58,11 +59,38 @@ def stage_audit(task, model=AUDITOR, sample=None, eval_top=False):
         rng = np.random.default_rng(7)
         todo = [todo[i] for i in rng.permutation(len(todo))[:sample]]
     out = {}
-    res = pmap(lambda t: audit_record(cache, model, task, t[0]["cands"][t[1]]), todo)
-    for n, ((u, ci), cats) in enumerate(zip(todo, res)):
-        out.setdefault(u["uid"], {})[str(ci)] = cats
-        if n % 500 == 0:
-            print("audit", task, model, n, len(todo), flush=True)
+    # Batch records from the same user to reduce inference overhead.  The batch prompt is
+    # still one independent category decision per record; audit_batch falls back to individual
+    # calls when the structured response is malformed.  Set AUDIT_BATCH_SIZE=1 to reproduce the
+    # historical one-record-per-request schedule.
+    if AUDIT_BATCH_SIZE > 1:
+        batches = []
+        current_uid, current = None, []
+        for u, ci in todo:
+            if current_uid != u["uid"] or len(current) >= AUDIT_BATCH_SIZE:
+                if current:
+                    batches.append(current)
+                current_uid, current = u["uid"], []
+            current.append((u, ci))
+        if current:
+            batches.append(current)
+
+        def do_batch(batch):
+            u = batch[0][0]
+            cats = audit_batch(cache, model, task, [u["cands"][ci] for _, ci in batch])
+            return u, [(ci, c) for (_, ci), c in zip(batch, cats)]
+
+        for n, (u, rows) in enumerate(pmap(do_batch, batches)):
+            for ci, cats in rows:
+                out.setdefault(u["uid"], {})[str(ci)] = cats
+            if n % 100 == 0:
+                print("audit", task, model, "batches", n, len(batches), flush=True)
+    else:
+        res = pmap(lambda t: audit_record(cache, model, task, t[0]["cands"][t[1]]), todo)
+        for n, ((u, ci), cats) in enumerate(zip(todo, res)):
+            out.setdefault(u["uid"], {})[str(ci)] = cats
+            if n % 500 == 0:
+                print("audit", task, model, n, len(todo), flush=True)
     suffix = "" if model == AUDITOR and not sample and not eval_top else f"_{tag(model)}"
     suffix += "_sample" if sample else ("_evaltop" if eval_top else "")
     json.dump(out, open(os.path.join(RES, f"{task}_audit{suffix}.json"), "w"))

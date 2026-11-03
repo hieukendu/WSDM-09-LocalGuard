@@ -1,0 +1,130 @@
+{
+  "cache_accounting": {
+    "lamp3|gemma2:9b": {
+      "auditor": "gemma2:9b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lamp3_gemma2_9b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lamp3",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lamp3|llama3.3:70b": {
+      "auditor": "llama3.3:70b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lamp3_llama33_70b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lamp3",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lamp3|qwen2.5:7b": {
+      "auditor": "qwen2.5:7b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lamp3_qwen25_7b.jsonl",
+      "exists": true,
+      "known_record_units": 1125,
+      "malformed_record_units_unknown": 51,
+      "malformed_response_rate": 0.03286384976525822,
+      "malformed_response_units": 14,
+      "response_units": 426,
+      "task": "lamp3",
+      "valid_record_units": 1082,
+      "valid_response_units": 412
+    },
+    "lamp7|gemma2:9b": {
+      "auditor": "gemma2:9b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lamp7_gemma2_9b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lamp7",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lamp7|llama3.3:70b": {
+      "auditor": "llama3.3:70b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lamp7_llama33_70b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lamp7",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lamp7|qwen2.5:7b": {
+      "auditor": "qwen2.5:7b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lamp7_qwen25_7b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lamp7",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lampqa|gemma2:9b": {
+      "auditor": "gemma2:9b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lampqa_gemma2_9b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lampqa",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lampqa|llama3.3:70b": {
+      "auditor": "llama3.3:70b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lampqa_llama33_70b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lampqa",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    },
+    "lampqa|qwen2.5:7b": {
+      "auditor": "qwen2.5:7b",
+      "cache": "/root/WSDM-09-LocalGuard/artifact/results/llm_cache/audit_lampqa_qwen25_7b.jsonl",
+      "exists": false,
+      "known_record_units": 0,
+      "malformed_record_units_unknown": 0,
+      "malformed_response_rate": null,
+      "malformed_response_units": 0,
+      "response_units": 0,
+      "task": "lampqa",
+      "valid_record_units": 0,
+      "valid_response_units": 0
+    }
+  },
+  "conservative_handling": {
+    "if_nonzero": "the cache does not retain the original prompt/group size for every historical line, so no record-level worst-case number is fabricated",
+    "policy": "malformed replies map to no categories in the existing pipeline; a conservative replay would mark every record attached to a malformed reply as flagged",
+    "status": "exact_record_replay_available_only_when_malformed_response_units_are_zero"
+  },
+  "contract": "common.py::audit_record and common.py::audit_batch; malformed JSON/category schema is a parse failure",
+  "label_output_summary": {},
+  "response_units_are_not_records": true,
+  "run_date": "2026-11-03"
+}

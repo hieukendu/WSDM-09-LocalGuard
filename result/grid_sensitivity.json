@@ -1,0 +1,545 @@
+{
+  "rows": [
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 2.1770666666666663,
+      "coarse_mean_test_loss": 0.10664444444444444,
+      "delta_loss_fine_minus_coarse": 0.054555555555555565,
+      "delta_size_fine_minus_coarse": 0.4156222222222228,
+      "fine_fraction_test_means_above_alpha": 0.17666666666666667,
+      "fine_grid_size": 45,
+      "fine_mean_size": 2.592688888888889,
+      "fine_mean_test_loss": 0.1612,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 823,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 385,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lampqa"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.006666666666666667,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 1.2798666666666667,
+      "coarse_mean_test_loss": 0.0864222222222222,
+      "delta_loss_fine_minus_coarse": 0.04935555555555557,
+      "delta_size_fine_minus_coarse": 0.8948666666666665,
+      "fine_fraction_test_means_above_alpha": 0.09333333333333334,
+      "fine_grid_size": 45,
+      "fine_mean_size": 2.174733333333333,
+      "fine_mean_test_loss": 0.13577777777777778,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 823,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 385,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lampqa"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 4.028888888888888,
+      "coarse_mean_test_loss": 0.3854666666666667,
+      "delta_loss_fine_minus_coarse": 0.03513333333333335,
+      "delta_size_fine_minus_coarse": 0.10784444444444485,
+      "fine_fraction_test_means_above_alpha": 0.15333333333333332,
+      "fine_grid_size": 45,
+      "fine_mean_size": 4.136733333333333,
+      "fine_mean_test_loss": 0.42060000000000003,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 823,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 385,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lampqa"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.043333333333333335,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 3.5483555555555557,
+      "coarse_mean_test_loss": 0.3505111111111111,
+      "delta_loss_fine_minus_coarse": 0.05724444444444443,
+      "delta_size_fine_minus_coarse": 0.24580000000000002,
+      "fine_fraction_test_means_above_alpha": 0.13333333333333333,
+      "fine_grid_size": 45,
+      "fine_mean_size": 3.7941555555555557,
+      "fine_mean_test_loss": 0.40775555555555554,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 823,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 385,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lampqa"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.0033333333333333335,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 3.1094074074074074,
+      "coarse_mean_test_loss": 0.15037037037037038,
+      "delta_loss_fine_minus_coarse": 0.02164444444444441,
+      "delta_size_fine_minus_coarse": 0.2250666666666663,
+      "fine_fraction_test_means_above_alpha": 0.22666666666666666,
+      "fine_grid_size": 44,
+      "fine_mean_size": 3.3344740740740737,
+      "fine_mean_test_loss": 0.1720148148148148,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1040,
+          "missing_calls": 311,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_14b": {
+          "distinct_contexts_required": 2078,
+          "missing_calls": 678,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 3118,
+          "missing_calls": 951,
+          "users": 450,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp3"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.12,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 1.982251851851852,
+      "coarse_mean_test_loss": 0.08965925925925926,
+      "delta_loss_fine_minus_coarse": 0.06183703703703704,
+      "delta_size_fine_minus_coarse": 0.7930814814814813,
+      "fine_fraction_test_means_above_alpha": 0.09666666666666666,
+      "fine_grid_size": 44,
+      "fine_mean_size": 2.775333333333333,
+      "fine_mean_test_loss": 0.1514962962962963,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1040,
+          "missing_calls": 311,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_14b": {
+          "distinct_contexts_required": 2078,
+          "missing_calls": 678,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 3118,
+          "missing_calls": 951,
+          "users": 450,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp3"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 4.480355555555556,
+      "coarse_mean_test_loss": 0.40469629629629633,
+      "delta_loss_fine_minus_coarse": 0.02063703703703701,
+      "delta_size_fine_minus_coarse": 0.04419259259259256,
+      "fine_fraction_test_means_above_alpha": 0.10333333333333333,
+      "fine_grid_size": 44,
+      "fine_mean_size": 4.524548148148148,
+      "fine_mean_test_loss": 0.42533333333333334,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1040,
+          "missing_calls": 311,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_14b": {
+          "distinct_contexts_required": 2078,
+          "missing_calls": 678,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 3118,
+          "missing_calls": 951,
+          "users": 450,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp3"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.14,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 4.039096296296296,
+      "coarse_mean_test_loss": 0.3488888888888889,
+      "delta_loss_fine_minus_coarse": 0.07139259259259256,
+      "delta_size_fine_minus_coarse": 0.3077777777777788,
+      "fine_fraction_test_means_above_alpha": 0.14333333333333334,
+      "fine_grid_size": 44,
+      "fine_mean_size": 4.346874074074075,
+      "fine_mean_test_loss": 0.4202814814814815,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1040,
+          "missing_calls": 311,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_14b": {
+          "distinct_contexts_required": 2078,
+          "missing_calls": 678,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 3118,
+          "missing_calls": 951,
+          "users": 450,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp3"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 0.0,
+      "coarse_mean_test_loss": 0.0,
+      "delta_loss_fine_minus_coarse": 0.15015555555555557,
+      "delta_size_fine_minus_coarse": 1.5296,
+      "fine_fraction_test_means_above_alpha": 0.22333333333333333,
+      "fine_grid_size": 45,
+      "fine_mean_size": 1.5296,
+      "fine_mean_test_loss": 0.15015555555555557,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "qwen25_7b": {
+          "distinct_contexts_required": 2239,
+          "missing_calls": 647,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp7"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 0.0,
+      "coarse_mean_test_loss": 0.0,
+      "delta_loss_fine_minus_coarse": 0.12395555555555555,
+      "delta_size_fine_minus_coarse": 1.142088888888889,
+      "fine_fraction_test_means_above_alpha": 0.11666666666666667,
+      "fine_grid_size": 45,
+      "fine_mean_size": 1.142088888888889,
+      "fine_mean_test_loss": 0.12395555555555555,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "qwen25_7b": {
+          "distinct_contexts_required": 2239,
+          "missing_calls": 647,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp7"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 2.3275555555555556,
+      "coarse_mean_test_loss": 0.2969333333333334,
+      "delta_loss_fine_minus_coarse": 0.14651111111111104,
+      "delta_size_fine_minus_coarse": 0.5218888888888884,
+      "fine_fraction_test_means_above_alpha": 0.22333333333333333,
+      "fine_grid_size": 45,
+      "fine_mean_size": 2.849444444444444,
+      "fine_mean_test_loss": 0.4434444444444444,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "qwen25_7b": {
+          "distinct_contexts_required": 2239,
+          "missing_calls": 647,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp7"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 2.2820666666666667,
+      "coarse_mean_test_loss": 0.3483777777777778,
+      "delta_loss_fine_minus_coarse": 0.06277777777777777,
+      "delta_size_fine_minus_coarse": 0.22553333333333336,
+      "fine_fraction_test_means_above_alpha": 0.11333333333333333,
+      "fine_grid_size": 45,
+      "fine_mean_size": 2.5076,
+      "fine_mean_test_loss": 0.41115555555555555,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {
+        "qwen25_7b": {
+          "distinct_contexts_required": 2239,
+          "missing_calls": 647,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      },
+      "task": "lamp7"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.09,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 2.7707111111111113,
+      "coarse_mean_test_loss": 0.08733333333333333,
+      "delta_loss_fine_minus_coarse": 0.04653333333333333,
+      "delta_size_fine_minus_coarse": 0.560222222222222,
+      "fine_fraction_test_means_above_alpha": 0.13,
+      "fine_grid_size": 44,
+      "fine_mean_size": 3.3309333333333333,
+      "fine_mean_test_loss": 0.13386666666666666,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {},
+      "task": "lamp2"
+    },
+    {
+      "alpha": 0.2,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 0.7596444444444443,
+      "coarse_mean_test_loss": 0.0416,
+      "delta_loss_fine_minus_coarse": 0.024000000000000007,
+      "delta_size_fine_minus_coarse": 1.2716444444444448,
+      "fine_fraction_test_means_above_alpha": 0.013333333333333334,
+      "fine_grid_size": 44,
+      "fine_mean_size": 2.031288888888889,
+      "fine_mean_test_loss": 0.0656,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {},
+      "task": "lamp2"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.2,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 4.549066666666667,
+      "coarse_mean_test_loss": 0.29386666666666666,
+      "delta_loss_fine_minus_coarse": 0.06626666666666664,
+      "delta_size_fine_minus_coarse": 0.2547555555555556,
+      "fine_fraction_test_means_above_alpha": 0.09666666666666666,
+      "fine_grid_size": 44,
+      "fine_mean_size": 4.803822222222222,
+      "fine_mean_test_loss": 0.3601333333333333,
+      "loss": "count",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {},
+      "task": "lamp2"
+    },
+    {
+      "alpha": 0.5,
+      "coarse_fraction_test_means_above_alpha": 0.0,
+      "coarse_grid_size": 8,
+      "coarse_mean_size": 4.453333333333333,
+      "coarse_mean_test_loss": 0.2677333333333333,
+      "delta_loss_fine_minus_coarse": 0.0725777777777778,
+      "delta_size_fine_minus_coarse": 0.18951111111111185,
+      "fine_fraction_test_means_above_alpha": 0.04,
+      "fine_grid_size": 44,
+      "fine_mean_size": 4.642844444444445,
+      "fine_mean_test_loss": 0.3403111111111111,
+      "loss": "severity2",
+      "maximum_proxy_reconstruction_error": 0.0,
+      "reader_coverage": {},
+      "task": "lamp2"
+    }
+  ],
+  "summary": {
+    "lamp2": {
+      "bin_counts": {
+        "long": 79,
+        "short": 71
+      },
+      "grid_sizes": {
+        "coarse": 8,
+        "fine": 44
+      },
+      "largest_admission_increase": {
+        "alpha": 0.2,
+        "delta_size": 1.2716444444444448,
+        "loss": "severity2"
+      },
+      "maximum_proxy_reconstruction_error": 0.0,
+      "profile_length_cut_training_median": 12.5,
+      "reader_coverage": {}
+    },
+    "lamp3": {
+      "bin_counts": {
+        "long": 212,
+        "short": 238
+      },
+      "grid_sizes": {
+        "coarse": 8,
+        "fine": 44
+      },
+      "largest_admission_increase": {
+        "alpha": 0.2,
+        "delta_size": 0.7930814814814813,
+        "loss": "severity2"
+      },
+      "maximum_proxy_reconstruction_error": 0.0,
+      "profile_length_cut_training_median": 142.5,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1040,
+          "missing_calls": 311,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_14b": {
+          "distinct_contexts_required": 2078,
+          "missing_calls": 678,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 3118,
+          "missing_calls": 951,
+          "users": 450,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      }
+    },
+    "lamp7": {
+      "bin_counts": {
+        "long": 133,
+        "short": 167
+      },
+      "grid_sizes": {
+        "coarse": 8,
+        "fine": 45
+      },
+      "largest_admission_increase": {
+        "alpha": 0.2,
+        "delta_size": 1.5296,
+        "loss": "count"
+      },
+      "maximum_proxy_reconstruction_error": 0.0,
+      "profile_length_cut_training_median": 14.0,
+      "reader_coverage": {
+        "qwen25_7b": {
+          "distinct_contexts_required": 2239,
+          "missing_calls": 647,
+          "users": 300,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      }
+    },
+    "lampqa": {
+      "bin_counts": {
+        "long": 135,
+        "short": 165
+      },
+      "grid_sizes": {
+        "coarse": 8,
+        "fine": 45
+      },
+      "largest_admission_increase": {
+        "alpha": 0.2,
+        "delta_size": 0.8948666666666665,
+        "loss": "severity2"
+      },
+      "maximum_proxy_reconstruction_error": 0.0,
+      "profile_length_cut_training_median": 32.0,
+      "reader_coverage": {
+        "llama31_8b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 823,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        },
+        "qwen25_7b": {
+          "distinct_contexts_required": 1123,
+          "missing_calls": 385,
+          "users": 150,
+          "utility_claim": "not estimated; incomplete fine-grid contexts"
+        }
+      }
+    }
+  }
+}

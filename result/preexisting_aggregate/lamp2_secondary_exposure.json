@@ -1,0 +1,504 @@
+{
+  "task": "lamp2",
+  "n_users": 150,
+  "n_training": 120,
+  "splits": 300,
+  "seed": 20261096,
+  "scope": "exploratory; union-auditor-relative; no human validation",
+  "weights": "2 for any special-category flag, 1 for other flagged records, 0 otherwise; maximum per record, not sum; normative sensitivity only",
+  "severity2_bound": 10,
+  "count_bound": 5,
+  "profile_length_cut_training_median": 12.5,
+  "bin_counts": {
+    "short": 71,
+    "long": 79
+  },
+  "grid_sizes": {
+    "coarse": 8,
+    "fine": 44
+  },
+  "maximum_proxy_reconstruction_error": 0.0,
+  "cells": {
+    "coarse|count|0.2|all|pooled": {
+      "mean_test_loss": 0.08733333333333333,
+      "mean_size": 2.7707111111111113,
+      "fraction_test_means_above_alpha": 0.09,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.2|all|within_bin": {
+      "mean_test_loss": 0.08733333333333333,
+      "mean_size": 2.7707111111111113,
+      "fraction_test_means_above_alpha": 0.09,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.2|short|pooled": {
+      "mean_test_loss": 0.08989087224310727,
+      "mean_size": 2.7358387918688787,
+      "fraction_test_means_above_alpha": 0.09,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.2|short|within_bin": {
+      "mean_test_loss": 0.047915548571160864,
+      "mean_size": 1.22102526034895,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.2|long|pooled": {
+      "mean_test_loss": 0.0850940946977321,
+      "mean_size": 2.802098528865254,
+      "fraction_test_means_above_alpha": 0.023333333333333334,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.2|long|within_bin": {
+      "mean_test_loss": 0.06592382595195685,
+      "mean_size": 1.7240243661094268,
+      "fraction_test_means_above_alpha": 0.07666666666666666,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.5|all|pooled": {
+      "mean_test_loss": 0.29386666666666666,
+      "mean_size": 4.549066666666667,
+      "fraction_test_means_above_alpha": 0.2,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.5|all|within_bin": {
+      "mean_test_loss": 0.29386666666666666,
+      "mean_size": 4.549066666666667,
+      "fraction_test_means_above_alpha": 0.2,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.5|short|pooled": {
+      "mean_test_loss": 0.30869834155663334,
+      "mean_size": 4.52932803924921,
+      "fraction_test_means_above_alpha": 0.14666666666666667,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.5|short|within_bin": {
+      "mean_test_loss": 0.2726304615341851,
+      "mean_size": 4.4515020652143935,
+      "fraction_test_means_above_alpha": 0.06666666666666667,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.5|long|pooled": {
+      "mean_test_loss": 0.2808215211702982,
+      "mean_size": 4.566729380143903,
+      "fraction_test_means_above_alpha": 0.13666666666666666,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|count|0.5|long|within_bin": {
+      "mean_test_loss": 0.2596441839949453,
+      "mean_size": 4.519664358558649,
+      "fraction_test_means_above_alpha": 0.11,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.2|all|pooled": {
+      "mean_test_loss": 0.0416,
+      "mean_size": 0.7596444444444443,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.2|all|within_bin": {
+      "mean_test_loss": 0.0416,
+      "mean_size": 0.7596444444444443,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.2|short|pooled": {
+      "mean_test_loss": 0.04662141049112651,
+      "mean_size": 0.745056449381299,
+      "fraction_test_means_above_alpha": 0.013333333333333334,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.2|short|within_bin": {
+      "mean_test_loss": 0.0,
+      "mean_size": 0.0,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 300,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.2|long|pooled": {
+      "mean_test_loss": 0.03741802998317585,
+      "mean_size": 0.7719842813206806,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.2|long|within_bin": {
+      "mean_test_loss": 0.0,
+      "mean_size": 0.0,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 299,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.5|all|pooled": {
+      "mean_test_loss": 0.2677333333333333,
+      "mean_size": 4.453333333333333,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.5|all|within_bin": {
+      "mean_test_loss": 0.2677333333333333,
+      "mean_size": 4.453333333333333,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.5|short|pooled": {
+      "mean_test_loss": 0.2839126021734672,
+      "mean_size": 4.446722790620185,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.5|short|within_bin": {
+      "mean_test_loss": 0.1787267150686349,
+      "mean_size": 3.23922155064158,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.5|long|pooled": {
+      "mean_test_loss": 0.25349430559904473,
+      "mean_size": 4.459107316293482,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "coarse|severity2|0.5|long|within_bin": {
+      "mean_test_loss": 0.21769333143001593,
+      "mean_size": 4.136501768101242,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.2|all|pooled": {
+      "mean_test_loss": 0.13386666666666666,
+      "mean_size": 3.3309333333333333,
+      "fraction_test_means_above_alpha": 0.13,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.2|all|within_bin": {
+      "mean_test_loss": 0.13386666666666666,
+      "mean_size": 3.3309333333333333,
+      "fraction_test_means_above_alpha": 0.13,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.2|short|pooled": {
+      "mean_test_loss": 0.15546582740594386,
+      "mean_size": 3.3145489640913515,
+      "fraction_test_means_above_alpha": 0.23666666666666666,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.2|short|within_bin": {
+      "mean_test_loss": 0.0594488200690908,
+      "mean_size": 2.2733761487165056,
+      "fraction_test_means_above_alpha": 0.03666666666666667,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.2|long|pooled": {
+      "mean_test_loss": 0.11434598594492153,
+      "mean_size": 3.345419195693728,
+      "fraction_test_means_above_alpha": 0.03666666666666667,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.2|long|within_bin": {
+      "mean_test_loss": 0.09402601096858493,
+      "mean_size": 2.8324355353569692,
+      "fraction_test_means_above_alpha": 0.07666666666666666,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.5|all|pooled": {
+      "mean_test_loss": 0.3601333333333333,
+      "mean_size": 4.803822222222222,
+      "fraction_test_means_above_alpha": 0.09666666666666666,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.5|all|within_bin": {
+      "mean_test_loss": 0.3601333333333333,
+      "mean_size": 4.803822222222222,
+      "fraction_test_means_above_alpha": 0.09666666666666666,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.5|short|pooled": {
+      "mean_test_loss": 0.37557092725076563,
+      "mean_size": 4.775976455471597,
+      "fraction_test_means_above_alpha": 0.09666666666666666,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.5|short|within_bin": {
+      "mean_test_loss": 0.3425319843046328,
+      "mean_size": 4.669045157451272,
+      "fraction_test_means_above_alpha": 0.06333333333333334,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.5|long|pooled": {
+      "mean_test_loss": 0.3466380417909688,
+      "mean_size": 4.829287998838947,
+      "fraction_test_means_above_alpha": 0.07333333333333333,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|count|0.5|long|within_bin": {
+      "mean_test_loss": 0.3274167257889309,
+      "mean_size": 4.746074522617257,
+      "fraction_test_means_above_alpha": 0.056666666666666664,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.2|all|pooled": {
+      "mean_test_loss": 0.0656,
+      "mean_size": 2.031288888888889,
+      "fraction_test_means_above_alpha": 0.013333333333333334,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.2|all|within_bin": {
+      "mean_test_loss": 0.0656,
+      "mean_size": 2.031288888888889,
+      "fraction_test_means_above_alpha": 0.013333333333333334,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.2|short|pooled": {
+      "mean_test_loss": 0.07548585619112644,
+      "mean_size": 2.1150144173198724,
+      "fraction_test_means_above_alpha": 0.11666666666666667,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.2|short|within_bin": {
+      "mean_test_loss": 0.0,
+      "mean_size": 0.0,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 300,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.2|long|pooled": {
+      "mean_test_loss": 0.05711304752006953,
+      "mean_size": 1.9564922724080853,
+      "fraction_test_means_above_alpha": 0.01,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.2|long|within_bin": {
+      "mean_test_loss": 0.0,
+      "mean_size": 0.0006666666666666668,
+      "fraction_test_means_above_alpha": 0.0,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
+      "draws_with_no_nonempty_crc_possible": 299,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.5|all|pooled": {
+      "mean_test_loss": 0.3403111111111111,
+      "mean_size": 4.642844444444445,
+      "fraction_test_means_above_alpha": 0.04,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.5|all|within_bin": {
+      "mean_test_loss": 0.3403111111111111,
+      "mean_size": 4.642844444444445,
+      "fraction_test_means_above_alpha": 0.04,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.5|short|pooled": {
+      "mean_test_loss": 0.34725812422041646,
+      "mean_size": 4.6296359700884615,
+      "fraction_test_means_above_alpha": 0.056666666666666664,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.5|short|within_bin": {
+      "mean_test_loss": 0.2273768116800791,
+      "mean_size": 3.6611439966667247,
+      "fraction_test_means_above_alpha": 0.03333333333333333,
+      "n_cal_min": 26,
+      "n_cal_max": 46,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.5|long|pooled": {
+      "mean_test_loss": 0.3347529630233253,
+      "mean_size": 4.654767559697998,
+      "fraction_test_means_above_alpha": 0.07,
+      "n_cal_min": 75,
+      "n_cal_max": 75,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    },
+    "fine|severity2|0.5|long|within_bin": {
+      "mean_test_loss": 0.2573336010888678,
+      "mean_size": 4.314500584463496,
+      "fraction_test_means_above_alpha": 0.04666666666666667,
+      "n_cal_min": 29,
+      "n_cal_max": 49,
+      "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
+      "draws_with_no_nonempty_crc_possible": 0,
+      "valid_draws": 300
+    }
+  },
+  "reader_coverage": {}
+}
