@@ -28,6 +28,19 @@
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
       },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 311,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
       "task": "lampqa"
     },
     {
@@ -57,6 +70,19 @@
           "users": 150,
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 311,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       },
       "task": "lampqa"
     },
@@ -88,6 +114,19 @@
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
       },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 311,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
       "task": "lampqa"
     },
     {
@@ -118,77 +157,92 @@
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
       },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 311,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
       "task": "lampqa"
     },
     {
       "alpha": 0.2,
-      "coarse_fraction_test_means_above_alpha": 0.0033333333333333335,
+      "coarse_fraction_test_means_above_alpha": 0.0,
       "coarse_grid_size": 8,
-      "coarse_mean_size": 3.1094074074074074,
-      "coarse_mean_test_loss": 0.15037037037037038,
-      "delta_loss_fine_minus_coarse": 0.02164444444444441,
-      "delta_size_fine_minus_coarse": 0.2250666666666663,
-      "fine_fraction_test_means_above_alpha": 0.22666666666666666,
+      "coarse_mean_size": 0.0,
+      "coarse_mean_test_loss": 0.0,
+      "delta_loss_fine_minus_coarse": 0.1,
+      "delta_size_fine_minus_coarse": 0.27959999999999996,
+      "fine_fraction_test_means_above_alpha": 0.11,
       "fine_grid_size": 44,
-      "fine_mean_size": 3.3344740740740737,
-      "fine_mean_test_loss": 0.1720148148148148,
+      "fine_mean_size": 0.27959999999999996,
+      "fine_mean_test_loss": 0.1,
       "loss": "count",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {
-        "llama31_8b": {
-          "distinct_contexts_required": 1040,
-          "missing_calls": 311,
-          "users": 150,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
-        "qwen25_14b": {
-          "distinct_contexts_required": 2078,
-          "missing_calls": 678,
-          "users": 300,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
         "qwen25_7b": {
-          "distinct_contexts_required": 3118,
-          "missing_calls": 951,
-          "users": 450,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
+          "distinct_contexts_required": 1048,
+          "missing_calls": 0,
+          "users": 150,
+          "utility_claim": "complete fine-grid contexts; paired utility recomputed"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 1048,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "training-fixed grid sensitivity; union-auditor-relative; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       },
       "task": "lamp3"
     },
     {
       "alpha": 0.2,
-      "coarse_fraction_test_means_above_alpha": 0.12,
+      "coarse_fraction_test_means_above_alpha": 0.0,
       "coarse_grid_size": 8,
-      "coarse_mean_size": 1.982251851851852,
-      "coarse_mean_test_loss": 0.08965925925925926,
-      "delta_loss_fine_minus_coarse": 0.06183703703703704,
-      "delta_size_fine_minus_coarse": 0.7930814814814813,
-      "fine_fraction_test_means_above_alpha": 0.09666666666666666,
+      "coarse_mean_size": 0.0,
+      "coarse_mean_test_loss": 0.0,
+      "delta_loss_fine_minus_coarse": 0.041777777777777775,
+      "delta_size_fine_minus_coarse": 0.10364444444444443,
+      "fine_fraction_test_means_above_alpha": 0.0,
       "fine_grid_size": 44,
-      "fine_mean_size": 2.775333333333333,
-      "fine_mean_test_loss": 0.1514962962962963,
+      "fine_mean_size": 0.10364444444444443,
+      "fine_mean_test_loss": 0.041777777777777775,
       "loss": "severity2",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {
-        "llama31_8b": {
-          "distinct_contexts_required": 1040,
-          "missing_calls": 311,
-          "users": 150,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
-        "qwen25_14b": {
-          "distinct_contexts_required": 2078,
-          "missing_calls": 678,
-          "users": 300,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
         "qwen25_7b": {
-          "distinct_contexts_required": 3118,
-          "missing_calls": 951,
-          "users": 450,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
+          "distinct_contexts_required": 1048,
+          "missing_calls": 0,
+          "users": 150,
+          "utility_claim": "complete fine-grid contexts; paired utility recomputed"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 1048,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "training-fixed grid sensitivity; union-auditor-relative; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       },
       "task": "lamp3"
     },
@@ -196,71 +250,73 @@
       "alpha": 0.5,
       "coarse_fraction_test_means_above_alpha": 0.0,
       "coarse_grid_size": 8,
-      "coarse_mean_size": 4.480355555555556,
-      "coarse_mean_test_loss": 0.40469629629629633,
-      "delta_loss_fine_minus_coarse": 0.02063703703703701,
-      "delta_size_fine_minus_coarse": 0.04419259259259256,
-      "fine_fraction_test_means_above_alpha": 0.10333333333333333,
+      "coarse_mean_size": 0.0,
+      "coarse_mean_test_loss": 0.0,
+      "delta_loss_fine_minus_coarse": 0.4208444444444444,
+      "delta_size_fine_minus_coarse": 1.0847555555555555,
+      "fine_fraction_test_means_above_alpha": 0.25333333333333335,
       "fine_grid_size": 44,
-      "fine_mean_size": 4.524548148148148,
-      "fine_mean_test_loss": 0.42533333333333334,
+      "fine_mean_size": 1.0847555555555555,
+      "fine_mean_test_loss": 0.4208444444444444,
       "loss": "count",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {
-        "llama31_8b": {
-          "distinct_contexts_required": 1040,
-          "missing_calls": 311,
-          "users": 150,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
-        "qwen25_14b": {
-          "distinct_contexts_required": 2078,
-          "missing_calls": 678,
-          "users": 300,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
         "qwen25_7b": {
-          "distinct_contexts_required": 3118,
-          "missing_calls": 951,
-          "users": 450,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
+          "distinct_contexts_required": 1048,
+          "missing_calls": 0,
+          "users": 150,
+          "utility_claim": "complete fine-grid contexts; paired utility recomputed"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 1048,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "training-fixed grid sensitivity; union-auditor-relative; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       },
       "task": "lamp3"
     },
     {
       "alpha": 0.5,
-      "coarse_fraction_test_means_above_alpha": 0.14,
+      "coarse_fraction_test_means_above_alpha": 0.0,
       "coarse_grid_size": 8,
-      "coarse_mean_size": 4.039096296296296,
-      "coarse_mean_test_loss": 0.3488888888888889,
-      "delta_loss_fine_minus_coarse": 0.07139259259259256,
-      "delta_size_fine_minus_coarse": 0.3077777777777788,
-      "fine_fraction_test_means_above_alpha": 0.14333333333333334,
+      "coarse_mean_size": 0.0,
+      "coarse_mean_test_loss": 0.0,
+      "delta_loss_fine_minus_coarse": 0.3467555555555556,
+      "delta_size_fine_minus_coarse": 0.8433777777777778,
+      "fine_fraction_test_means_above_alpha": 0.08333333333333333,
       "fine_grid_size": 44,
-      "fine_mean_size": 4.346874074074075,
-      "fine_mean_test_loss": 0.4202814814814815,
+      "fine_mean_size": 0.8433777777777778,
+      "fine_mean_test_loss": 0.3467555555555556,
       "loss": "severity2",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {
-        "llama31_8b": {
-          "distinct_contexts_required": 1040,
-          "missing_calls": 311,
-          "users": 150,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
-        "qwen25_14b": {
-          "distinct_contexts_required": 2078,
-          "missing_calls": 678,
-          "users": 300,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
         "qwen25_7b": {
-          "distinct_contexts_required": 3118,
-          "missing_calls": 951,
-          "users": 450,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
+          "distinct_contexts_required": 1048,
+          "missing_calls": 0,
+          "users": 150,
+          "utility_claim": "complete fine-grid contexts; paired utility recomputed"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 1048,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "training-fixed grid sensitivity; union-auditor-relative; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       },
       "task": "lamp3"
     },
@@ -286,6 +342,19 @@
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
       },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 288,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
       "task": "lamp7"
     },
     {
@@ -309,6 +378,19 @@
           "users": 300,
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 288,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       },
       "task": "lamp7"
     },
@@ -334,6 +416,19 @@
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
       },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 288,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
       "task": "lamp7"
     },
     {
@@ -358,6 +453,19 @@
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
       },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 288,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
       "task": "lamp7"
     },
     {
@@ -375,6 +483,7 @@
       "loss": "count",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {},
+      "standalone_reader_utility": null,
       "task": "lamp2"
     },
     {
@@ -392,6 +501,7 @@
       "loss": "severity2",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {},
+      "standalone_reader_utility": null,
       "task": "lamp2"
     },
     {
@@ -409,6 +519,7 @@
       "loss": "count",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {},
+      "standalone_reader_utility": null,
       "task": "lamp2"
     },
     {
@@ -426,6 +537,7 @@
       "loss": "severity2",
       "maximum_proxy_reconstruction_error": 0.0,
       "reader_coverage": {},
+      "standalone_reader_utility": null,
       "task": "lamp2"
     }
   ],
@@ -446,43 +558,45 @@
       },
       "maximum_proxy_reconstruction_error": 0.0,
       "profile_length_cut_training_median": 12.5,
-      "reader_coverage": {}
+      "reader_coverage": {},
+      "standalone_reader_utility": null
     },
     "lamp3": {
       "bin_counts": {
-        "long": 212,
-        "short": 238
+        "long": 69,
+        "short": 81
       },
       "grid_sizes": {
         "coarse": 8,
         "fine": 44
       },
       "largest_admission_increase": {
-        "alpha": 0.2,
-        "delta_size": 0.7930814814814813,
-        "loss": "severity2"
+        "alpha": 0.5,
+        "delta_size": 1.0847555555555555,
+        "loss": "count"
       },
       "maximum_proxy_reconstruction_error": 0.0,
       "profile_length_cut_training_median": 142.5,
       "reader_coverage": {
-        "llama31_8b": {
-          "distinct_contexts_required": 1040,
-          "missing_calls": 311,
-          "users": 150,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
-        "qwen25_14b": {
-          "distinct_contexts_required": 2078,
-          "missing_calls": 678,
-          "users": 300,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
-        },
         "qwen25_7b": {
-          "distinct_contexts_required": 3118,
-          "missing_calls": 951,
-          "users": 450,
-          "utility_claim": "not estimated; incomplete fine-grid contexts"
+          "distinct_contexts_required": 1048,
+          "missing_calls": 0,
+          "users": 150,
+          "utility_claim": "complete fine-grid contexts; paired utility recomputed"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 1048,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "training-fixed grid sensitivity; union-auditor-relative; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       }
     },
     "lamp7": {
@@ -508,6 +622,19 @@
           "users": 300,
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 288,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       }
     },
     "lampqa": {
@@ -539,6 +666,19 @@
           "users": 150,
           "utility_claim": "not estimated; incomplete fine-grid contexts"
         }
+      },
+      "standalone_reader_utility": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 311,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
       }
     }
   }

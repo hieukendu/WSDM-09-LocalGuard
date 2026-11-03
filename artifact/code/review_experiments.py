@@ -77,6 +77,20 @@ def grid_sensitivity(results: Path) -> tuple[list[dict[str, Any]], dict[str, Any
             continue
         data = read_json(path)
         coverage = data.get("reader_coverage", {})
+        standalone_path = results / f"{task}_fine_grid_utility_qwen25_7b.json"
+        standalone = None
+        if standalone_path.exists():
+            standalone_data = read_json(standalone_path)
+            standalone_coverage = standalone_data.get("reader_coverage", {})
+            standalone_complete = bool(standalone_coverage) and all(
+                value.get("missing_calls") == 0 for value in standalone_coverage.values()
+            )
+            standalone = {
+                "status": "completed" if standalone_complete else "incomplete",
+                "users": standalone_data.get("n_users"),
+                "scope": standalone_data.get("scope"),
+                "reader_coverage": standalone_coverage,
+            }
         for alpha in ALPHAS:
             for loss in LOSSES:
                 coarse_key = f"coarse|{loss}|{alpha}|all|pooled"
@@ -101,6 +115,7 @@ def grid_sensitivity(results: Path) -> tuple[list[dict[str, Any]], dict[str, Any
                         "coarse_fraction_test_means_above_alpha": coarse["fraction_test_means_above_alpha"],
                         "fine_fraction_test_means_above_alpha": fine["fraction_test_means_above_alpha"],
                         "reader_coverage": coverage,
+                        "standalone_reader_utility": standalone,
                         "maximum_proxy_reconstruction_error": data.get("maximum_proxy_reconstruction_error"),
                     }
                 )
@@ -118,6 +133,7 @@ def grid_sensitivity(results: Path) -> tuple[list[dict[str, Any]], dict[str, Any
                     "delta_size": max_row["delta_size_fine_minus_coarse"],
                 },
                 "reader_coverage": coverage,
+                "standalone_reader_utility": standalone,
             }
     return rows, summary
 
@@ -271,7 +287,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         return
     keys = list(rows[0])
     with path.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=keys)
+        writer = csv.DictWriter(fh, fieldnames=keys, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

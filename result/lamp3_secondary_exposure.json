@@ -267,7 +267,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9020444444444444,
+      "test_utility_percentiles_5_95": [
+        0.88,
+        0.9233333333333333
+      ]
     },
     "fine|count|0.2|all|within_bin": {
       "mean_test_loss": 0.1,
@@ -277,7 +282,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9020444444444444,
+      "test_utility_percentiles_5_95": [
+        0.88,
+        0.9233333333333333
+      ]
     },
     "fine|count|0.2|short|pooled": {
       "mean_test_loss": 0.10231921191194501,
@@ -287,7 +297,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9124005710995989,
+      "test_utility_percentiles_5_95": [
+        0.8809523809523809,
+        0.9444444444444444
+      ]
     },
     "fine|count|0.2|short|within_bin": {
       "mean_test_loss": 0.05869345276042736,
@@ -297,7 +312,12 @@
       "n_cal_max": 48,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9137557933890325,
+      "test_utility_percentiles_5_95": [
+        0.883683819891143,
+        0.9437847222222222
+      ]
     },
     "fine|count|0.2|long|pooled": {
       "mean_test_loss": 0.09712939038894165,
@@ -307,7 +327,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8896755377235047,
+      "test_utility_percentiles_5_95": [
+        0.8560606060606061,
+        0.9224736590038315
+      ]
     },
     "fine|count|0.2|long|within_bin": {
       "mean_test_loss": 0.05092650683016024,
@@ -317,7 +342,12 @@
       "n_cal_max": 43,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 24,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.887589562482996,
+      "test_utility_percentiles_5_95": [
+        0.8525641025641025,
+        0.9193692396313363
+      ]
     },
     "fine|count|0.5|all|pooled": {
       "mean_test_loss": 0.4208444444444444,
@@ -327,7 +357,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9036444444444446,
+      "test_utility_percentiles_5_95": [
+        0.88,
+        0.9266666666666666
+      ]
     },
     "fine|count|0.5|all|within_bin": {
       "mean_test_loss": 0.4208444444444444,
@@ -337,7 +372,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9036444444444446,
+      "test_utility_percentiles_5_95": [
+        0.88,
+        0.9266666666666666
+      ]
     },
     "fine|count|0.5|short|pooled": {
       "mean_test_loss": 0.5013837682783674,
@@ -347,7 +387,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9104591156697381,
+      "test_utility_percentiles_5_95": [
+        0.8782051282051282,
+        0.9418604651162791
+      ]
     },
     "fine|count|0.5|short|within_bin": {
       "mean_test_loss": 0.3508690180996146,
@@ -357,7 +402,12 @@
       "n_cal_max": 48,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9075037795652846,
+      "test_utility_percentiles_5_95": [
+        0.8716833890746934,
+        0.9404761904761905
+      ]
     },
     "fine|count|0.5|long|pooled": {
       "mean_test_loss": 0.3249721910945001,
@@ -367,7 +417,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8955770611444818,
+      "test_utility_percentiles_5_95": [
+        0.8636363636363636,
+        0.9265180265654649
+      ]
     },
     "fine|count|0.5|long|within_bin": {
       "mean_test_loss": 0.35993078274060847,
@@ -377,7 +432,12 @@
       "n_cal_max": 43,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 9,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8953902399752101,
+      "test_utility_percentiles_5_95": [
+        0.8624784482758621,
+        0.9286272321428571
+      ]
     },
     "fine|severity2|0.2|all|pooled": {
       "mean_test_loss": 0.041777777777777775,
@@ -387,7 +447,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9022333333333333,
+      "test_utility_percentiles_5_95": [
+        0.88,
+        0.9233333333333333
+      ]
     },
     "fine|severity2|0.2|all|within_bin": {
       "mean_test_loss": 0.041777777777777775,
@@ -397,7 +462,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9022333333333333,
+      "test_utility_percentiles_5_95": [
+        0.88,
+        0.9233333333333333
+      ]
     },
     "fine|severity2|0.2|short|pooled": {
       "mean_test_loss": 0.039048856261522255,
@@ -407,7 +477,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9145731582645191,
+      "test_utility_percentiles_5_95": [
+        0.8841463414634146,
+        0.9444444444444444
+      ]
     },
     "fine|severity2|0.2|short|within_bin": {
       "mean_test_loss": 0.0,
@@ -417,7 +492,12 @@
       "n_cal_max": 48,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
       "draws_with_no_nonempty_crc_possible": 300,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9156266398822248,
+      "test_utility_percentiles_5_95": [
+        0.8869047619047619,
+        0.9444444444444444
+      ]
     },
     "fine|severity2|0.2|long|pooled": {
       "mean_test_loss": 0.04504801993339092,
@@ -427,7 +507,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8874670309940463,
+      "test_utility_percentiles_5_95": [
+        0.8525641025641025,
+        0.9193548387096774
+      ]
     },
     "fine|severity2|0.2|long|within_bin": {
       "mean_test_loss": 0.0,
@@ -437,7 +522,12 @@
       "n_cal_max": 43,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 49,
       "draws_with_no_nonempty_crc_possible": 300,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8867727141915415,
+      "test_utility_percentiles_5_95": [
+        0.8515625,
+        0.9167892156862745
+      ]
     },
     "fine|severity2|0.5|all|pooled": {
       "mean_test_loss": 0.3467555555555556,
@@ -447,7 +537,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9046444444444444,
+      "test_utility_percentiles_5_95": [
+        0.8833333333333333,
+        0.9266666666666666
+      ]
     },
     "fine|severity2|0.5|all|within_bin": {
       "mean_test_loss": 0.3467555555555556,
@@ -457,7 +552,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9046444444444444,
+      "test_utility_percentiles_5_95": [
+        0.8833333333333333,
+        0.9266666666666666
+      ]
     },
     "fine|severity2|0.5|short|pooled": {
       "mean_test_loss": 0.4322454563019423,
@@ -467,7 +567,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9101407409877151,
+      "test_utility_percentiles_5_95": [
+        0.875,
+        0.9418604651162791
+      ]
     },
     "fine|severity2|0.5|short|within_bin": {
       "mean_test_loss": 0.22790145338948392,
@@ -477,7 +582,12 @@
       "n_cal_max": 48,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.9092155946816898,
+      "test_utility_percentiles_5_95": [
+        0.875,
+        0.9459700772200772
+      ]
     },
     "fine|severity2|0.5|long|pooled": {
       "mean_test_loss": 0.24518907405019386,
@@ -487,7 +597,12 @@
       "n_cal_max": 75,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8980976136179804,
+      "test_utility_percentiles_5_95": [
+        0.8671875,
+        0.9306186868686869
+      ]
     },
     "fine|severity2|0.5|long|within_bin": {
       "mean_test_loss": 0.22315633017907618,
@@ -497,15 +612,296 @@
       "n_cal_max": 43,
       "minimum_n_for_nonempty_crc_zero_empirical_loss": 19,
       "draws_with_no_nonempty_crc_possible": 0,
-      "valid_draws": 300
+      "valid_draws": 300,
+      "mean_test_utility": 0.8961114625012905,
+      "test_utility_percentiles_5_95": [
+        0.8636363636363636,
+        0.9318181818181818
+      ]
     }
   },
   "reader_coverage": {
     "qwen25_7b": {
       "users": 150,
       "distinct_contexts_required": 1048,
-      "missing_calls": 294,
-      "utility_claim": "not estimated; incomplete fine-grid contexts"
+      "missing_calls": 0,
+      "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+    }
+  },
+  "fine_grid_utility": {
+    "status": "completed",
+    "model": "qwen2.5:7b",
+    "grid": "training-fixed fine grid",
+    "grid_sizes": {
+      "coarse": 8,
+      "fine": 44
+    },
+    "maximum_proxy_reconstruction_error": 0.0,
+    "cells": {
+      "fine|count|0.2|all|pooled": {
+        "mean_test_utility": 0.9020444444444444,
+        "test_utility_percentiles_5_95": [
+          0.88,
+          0.9233333333333333
+        ],
+        "mean_test_loss": 0.1,
+        "mean_size": 0.27959999999999996,
+        "fraction_test_means_above_alpha": 0.11,
+        "valid_draws": 300
+      },
+      "fine|count|0.2|all|within_bin": {
+        "mean_test_utility": 0.9020444444444444,
+        "test_utility_percentiles_5_95": [
+          0.88,
+          0.9233333333333333
+        ],
+        "mean_test_loss": 0.1,
+        "mean_size": 0.27959999999999996,
+        "fraction_test_means_above_alpha": 0.11,
+        "valid_draws": 300
+      },
+      "fine|count|0.2|short|pooled": {
+        "mean_test_utility": 0.9124005710995989,
+        "test_utility_percentiles_5_95": [
+          0.8809523809523809,
+          0.9444444444444444
+        ],
+        "mean_test_loss": 0.10231921191194501,
+        "mean_size": 0.28791158108097165,
+        "fraction_test_means_above_alpha": 0.11,
+        "valid_draws": 300
+      },
+      "fine|count|0.2|short|within_bin": {
+        "mean_test_utility": 0.9137557933890325,
+        "test_utility_percentiles_5_95": [
+          0.883683819891143,
+          0.9437847222222222
+        ],
+        "mean_test_loss": 0.05869345276042736,
+        "mean_size": 0.1725611047514497,
+        "fraction_test_means_above_alpha": 0.013333333333333334,
+        "valid_draws": 300
+      },
+      "fine|count|0.2|long|pooled": {
+        "mean_test_utility": 0.8896755377235047,
+        "test_utility_percentiles_5_95": [
+          0.8560606060606061,
+          0.9224736590038315
+        ],
+        "mean_test_loss": 0.09712939038894165,
+        "mean_size": 0.26966353765834167,
+        "fraction_test_means_above_alpha": 0.05333333333333334,
+        "valid_draws": 300
+      },
+      "fine|count|0.2|long|within_bin": {
+        "mean_test_utility": 0.887589562482996,
+        "test_utility_percentiles_5_95": [
+          0.8525641025641025,
+          0.9193692396313363
+        ],
+        "mean_test_loss": 0.05092650683016024,
+        "mean_size": 0.09824365487062228,
+        "fraction_test_means_above_alpha": 0.013333333333333334,
+        "valid_draws": 300
+      },
+      "fine|count|0.5|all|pooled": {
+        "mean_test_utility": 0.9036444444444446,
+        "test_utility_percentiles_5_95": [
+          0.88,
+          0.9266666666666666
+        ],
+        "mean_test_loss": 0.4208444444444444,
+        "mean_size": 1.0847555555555555,
+        "fraction_test_means_above_alpha": 0.25333333333333335,
+        "valid_draws": 300
+      },
+      "fine|count|0.5|all|within_bin": {
+        "mean_test_utility": 0.9036444444444446,
+        "test_utility_percentiles_5_95": [
+          0.88,
+          0.9266666666666666
+        ],
+        "mean_test_loss": 0.4208444444444444,
+        "mean_size": 1.0847555555555555,
+        "fraction_test_means_above_alpha": 0.25333333333333335,
+        "valid_draws": 300
+      },
+      "fine|count|0.5|short|pooled": {
+        "mean_test_utility": 0.9104591156697381,
+        "test_utility_percentiles_5_95": [
+          0.8782051282051282,
+          0.9418604651162791
+        ],
+        "mean_test_loss": 0.5013837682783674,
+        "mean_size": 1.2038856404851082,
+        "fraction_test_means_above_alpha": 0.42333333333333334,
+        "valid_draws": 300
+      },
+      "fine|count|0.5|short|within_bin": {
+        "mean_test_utility": 0.9075037795652846,
+        "test_utility_percentiles_5_95": [
+          0.8716833890746934,
+          0.9404761904761905
+        ],
+        "mean_test_loss": 0.3508690180996146,
+        "mean_size": 0.865691660096713,
+        "fraction_test_means_above_alpha": 0.16333333333333333,
+        "valid_draws": 300
+      },
+      "fine|count|0.5|long|pooled": {
+        "mean_test_utility": 0.8955770611444818,
+        "test_utility_percentiles_5_95": [
+          0.8636363636363636,
+          0.9265180265654649
+        ],
+        "mean_test_loss": 0.3249721910945001,
+        "mean_size": 0.9427770505150496,
+        "fraction_test_means_above_alpha": 0.03666666666666667,
+        "valid_draws": 300
+      },
+      "fine|count|0.5|long|within_bin": {
+        "mean_test_utility": 0.8953902399752101,
+        "test_utility_percentiles_5_95": [
+          0.8624784482758621,
+          0.9286272321428571
+        ],
+        "mean_test_loss": 0.35993078274060847,
+        "mean_size": 1.0461459367180073,
+        "fraction_test_means_above_alpha": 0.13666666666666666,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.2|all|pooled": {
+        "mean_test_utility": 0.9022333333333333,
+        "test_utility_percentiles_5_95": [
+          0.88,
+          0.9233333333333333
+        ],
+        "mean_test_loss": 0.041777777777777775,
+        "mean_size": 0.10364444444444443,
+        "fraction_test_means_above_alpha": 0.0,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.2|all|within_bin": {
+        "mean_test_utility": 0.9022333333333333,
+        "test_utility_percentiles_5_95": [
+          0.88,
+          0.9233333333333333
+        ],
+        "mean_test_loss": 0.041777777777777775,
+        "mean_size": 0.10364444444444443,
+        "fraction_test_means_above_alpha": 0.0,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.2|short|pooled": {
+        "mean_test_utility": 0.9145731582645191,
+        "test_utility_percentiles_5_95": [
+          0.8841463414634146,
+          0.9444444444444444
+        ],
+        "mean_test_loss": 0.039048856261522255,
+        "mean_size": 0.12093545138383367,
+        "fraction_test_means_above_alpha": 0.0,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.2|short|within_bin": {
+        "mean_test_utility": 0.9156266398822248,
+        "test_utility_percentiles_5_95": [
+          0.8869047619047619,
+          0.9444444444444444
+        ],
+        "mean_test_loss": 0.0,
+        "mean_size": 0.0,
+        "fraction_test_means_above_alpha": 0.0,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.2|long|pooled": {
+        "mean_test_utility": 0.8874670309940463,
+        "test_utility_percentiles_5_95": [
+          0.8525641025641025,
+          0.9193548387096774
+        ],
+        "mean_test_loss": 0.04504801993339092,
+        "mean_size": 0.08318123666433921,
+        "fraction_test_means_above_alpha": 0.0,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.2|long|within_bin": {
+        "mean_test_utility": 0.8867727141915415,
+        "test_utility_percentiles_5_95": [
+          0.8515625,
+          0.9167892156862745
+        ],
+        "mean_test_loss": 0.0,
+        "mean_size": 0.0,
+        "fraction_test_means_above_alpha": 0.0,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.5|all|pooled": {
+        "mean_test_utility": 0.9046444444444444,
+        "test_utility_percentiles_5_95": [
+          0.8833333333333333,
+          0.9266666666666666
+        ],
+        "mean_test_loss": 0.3467555555555556,
+        "mean_size": 0.8433777777777778,
+        "fraction_test_means_above_alpha": 0.08333333333333333,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.5|all|within_bin": {
+        "mean_test_utility": 0.9046444444444444,
+        "test_utility_percentiles_5_95": [
+          0.8833333333333333,
+          0.9266666666666666
+        ],
+        "mean_test_loss": 0.3467555555555556,
+        "mean_size": 0.8433777777777778,
+        "fraction_test_means_above_alpha": 0.08333333333333333,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.5|short|pooled": {
+        "mean_test_utility": 0.9101407409877151,
+        "test_utility_percentiles_5_95": [
+          0.875,
+          0.9418604651162791
+        ],
+        "mean_test_loss": 0.4322454563019423,
+        "mean_size": 0.9418243985197754,
+        "fraction_test_means_above_alpha": 0.3566666666666667,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.5|short|within_bin": {
+        "mean_test_utility": 0.9092155946816898,
+        "test_utility_percentiles_5_95": [
+          0.875,
+          0.9459700772200772
+        ],
+        "mean_test_loss": 0.22790145338948392,
+        "mean_size": 0.4935050973382427,
+        "fraction_test_means_above_alpha": 0.02666666666666667,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.5|long|pooled": {
+        "mean_test_utility": 0.8980976136179804,
+        "test_utility_percentiles_5_95": [
+          0.8671875,
+          0.9306186868686869
+        ],
+        "mean_test_loss": 0.24518907405019386,
+        "mean_size": 0.7259810312450838,
+        "fraction_test_means_above_alpha": 0.0033333333333333335,
+        "valid_draws": 300
+      },
+      "fine|severity2|0.5|long|within_bin": {
+        "mean_test_utility": 0.8961114625012905,
+        "test_utility_percentiles_5_95": [
+          0.8636363636363636,
+          0.9318181818181818
+        ],
+        "mean_test_loss": 0.22315633017907618,
+        "mean_size": 0.6503015587201553,
+        "fraction_test_means_above_alpha": 0.01,
+        "valid_draws": 300
+      }
     }
   }
 }

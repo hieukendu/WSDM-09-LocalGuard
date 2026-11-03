@@ -265,6 +265,9 @@ def main() -> None:
         "lamp3_oracle_exhaustive_sensitivity.json",
         "lamp3_baselines_qwen25_7b.json",
         "lamp3_secondary_exposure.json",
+        "lamp3_fine_grid_utility_qwen25_7b.json",
+        "lamp7_fine_grid_utility_qwen25_7b.json",
+        "lampqa_fine_grid_utility_qwen25_7b.json",
         "lamp3_analysis_review.json",
         "sim_crc.json",
     }
@@ -276,11 +279,29 @@ def main() -> None:
             shutil.copy2(src, dst)
             copied.append(name)
 
+    fine_status: dict[str, Any] = {}
+    for task in TASKS:
+        fine_grid = results / f"{task}_fine_grid_utility_qwen25_7b.json"
+        if not fine_grid.exists():
+            continue
+        fine_data = read_json(fine_grid)
+        coverage = fine_data.get("reader_coverage", {})
+        complete = bool(coverage) and all(v.get("missing_calls") == 0 for v in coverage.values())
+        fine_status[task] = {
+            "status": "completed" if complete else "incomplete",
+            "users": fine_data.get("n_users"),
+            "reader_coverage": coverage,
+            "scope": fine_data.get("scope"),
+        }
+    fine_complete = fine_status.get("lamp3", {}).get("status") == "completed"
+    any_fine_complete = any(v["status"] == "completed" for v in fine_status.values())
     fresh = {
         "parser_accounting": "completed" if any(v["exists"] for v in parser["cache_accounting"].values()) else "not_started",
         "matched_calibrated_redaction": "completed" if (results / "lamp3_calibrated_redaction_qwen25_7b.json").exists() else "not_started",
         "oracle_epsilon_and_exhaustive_slice": "completed" if (results / "lamp3_oracle_exhaustive_sensitivity.json").exists() else "not_started",
-        "lamp3_grid_envelope": "completed" if (results / "lamp3_secondary_exposure.json").exists() else "not_started",
+        "lamp3_grid_envelope": "completed_with_fine_grid_reader_utility" if fine_complete else ("completed_label_only" if (results / "lamp3_secondary_exposure.json").exists() else "not_started"),
+        "fine_grid_reader_utility": "completed" if any_fine_complete else "incomplete",
+        "fine_grid_reader_utility_by_task": fine_status,
         "fixed_gate_comparator": "available_from_preexisting_aggregate",
         "human_audit": "skipped_by_user_already_completed",
         "model_70b": "postponed_by_latest_user_instruction; model downloaded but no 70B inference run",
@@ -296,6 +317,8 @@ def main() -> None:
         "Human audit was skipped because it was already completed. The 70B model was downloaded but inference was postponed by the latest instruction.",
         "",
         "Completed additional runs are listed in `experiment_status.json`; parser response counts are in `parser_accounting.json`.",
+        "",
+        "Completed standalone fine-grid reader utilities are in the `lamp3_fine_grid_utility_qwen25_7b.json`, `lamp7_fine_grid_utility_qwen25_7b.json`, and `lampqa_fine_grid_utility_qwen25_7b.json` files; each recorded coverage has zero missing contexts. The LaMP-7 and LaMP-QA files use a separate 150-user union-auditor cohort and do not overwrite the legacy 300-user exposure aggregates.",
         "",
         "The result folder contains aggregate outputs only. Raw benchmark rows, prompts, row-level auditor labels, and LLM caches remain in the artifact workspace.",
         "",

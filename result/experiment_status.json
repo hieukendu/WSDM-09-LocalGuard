@@ -2,16 +2,61 @@
   "copied_aggregate_outputs": [
     "lamp3_baselines_qwen25_7b.json",
     "lamp3_calibrated_redaction_qwen25_7b.json",
+    "lamp3_fine_grid_utility_qwen25_7b.json",
     "lamp3_oracle_exhaustive_sensitivity.json",
     "lamp3_secondary_exposure.json",
+    "lamp7_fine_grid_utility_qwen25_7b.json",
+    "lampqa_fine_grid_utility_qwen25_7b.json",
     "sim_crc.json"
   ],
   "raw_and_cache_policy": "raw rows, prompts, labels, and caches remain under artifact/results and are not copied into result",
   "run_date": "2026-11-03",
   "status": {
+    "fine_grid_reader_utility": "completed",
+    "fine_grid_reader_utility_by_task": {
+      "lamp3": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 1048,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "training-fixed grid sensitivity; union-auditor-relative; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
+      "lamp7": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 288,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      },
+      "lampqa": {
+        "reader_coverage": {
+          "qwen25_7b": {
+            "distinct_contexts_required": 311,
+            "missing_calls": 0,
+            "users": 150,
+            "utility_claim": "complete fine-grid contexts; paired utility recomputed"
+          }
+        },
+        "scope": "standalone 150-user union-auditor cohort; training-fixed grid sensitivity; paired reader utility; no new human labels",
+        "status": "completed",
+        "users": 150
+      }
+    },
     "fixed_gate_comparator": "available_from_preexisting_aggregate",
     "human_audit": "skipped_by_user_already_completed",
-    "lamp3_grid_envelope": "completed",
+    "lamp3_grid_envelope": "completed_with_fine_grid_reader_utility",
     "matched_calibrated_redaction": "completed",
     "model_70b": "postponed_by_latest_user_instruction; model downloaded but no 70B inference run",
     "oracle_epsilon_and_exhaustive_slice": "completed",
