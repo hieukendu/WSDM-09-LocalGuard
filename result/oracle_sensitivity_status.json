@@ -1,8 +1,11 @@
 {
-  "reason": "The checked-in artifact retains only aggregate epsilon=0.05 summaries; row-level oracle witnesses and utilities are excluded.",
+  "reason": "The fresh exhaustive/tolerance run is complete; the legacy aggregate fields below are retained for context.",
+  "fresh_output": "lamp3_oracle_exhaustive_sensitivity.json",
+  "fresh_n_users": 8,
+  "fresh_epsilons": [0.0, 0.01, 0.025, 0.05, 0.1],
   "requested_addition": "epsilon sensitivity, feasible-only exposure, and full-pool versus no-profile reference",
-  "sensitivity_curve": "not_run",
-  "status": "single_epsilon_aggregate_only",
+  "sensitivity_curve": "completed",
+  "status": "completed_exhaustive_and_epsilon_sensitivity_plus_legacy_aggregate",
   "tasks": {
     "lamp3": {
       "epsilon": 0.05,

@@ -1,5 +1,6 @@
 {
-  "calibrated_redaction_status": "not_run",
+  "calibrated_redaction_status": "completed_matched_replay",
+  "calibrated_redaction_output": "lamp3_calibrated_redaction_qwen25_7b.json",
   "models": {
     "qwen25_14b": {
       "existing_baselines": {
@@ -172,6 +173,6 @@
       "top5": 0.9222222222222223
     }
   },
-  "reason": "A matched calibrated redaction family needs row-level users, detector/auditor labels, admission sets and reader utilities, which are excluded from the public artifact.",
-  "status": "existing_uncalibrated_baselines_only"
+  "reason": "The matched calibrated redaction run was completed on the fresh 150-user LaMP-3 cohort; the legacy baseline fields above are retained for context.",
+  "status": "completed_matched_calibrated_redaction_plus_legacy_baselines"
 }

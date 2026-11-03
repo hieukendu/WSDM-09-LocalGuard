@@ -1,6 +1,8 @@
 {
   "copied_aggregate_outputs": [
     "lamp3_baselines_qwen25_7b.json",
+    "lamp3_calibrated_redaction_qwen25_7b.json",
+    "lamp3_oracle_exhaustive_sensitivity.json",
     "lamp3_secondary_exposure.json",
     "sim_crc.json"
   ],
@@ -10,9 +12,9 @@
     "fixed_gate_comparator": "available_from_preexisting_aggregate",
     "human_audit": "skipped_by_user_already_completed",
     "lamp3_grid_envelope": "completed",
-    "matched_calibrated_redaction": "not_started",
+    "matched_calibrated_redaction": "completed",
     "model_70b": "postponed_by_latest_user_instruction; model downloaded but no 70B inference run",
-    "oracle_epsilon_and_exhaustive_slice": "not_started",
+    "oracle_epsilon_and_exhaustive_slice": "completed",
     "parser_accounting": "completed"
   }
 }

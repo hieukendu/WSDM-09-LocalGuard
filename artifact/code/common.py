@@ -213,6 +213,13 @@ Texts written by one user:
 
 Judge every text on its own. Reply with JSON only: {{"labels": [{{"id": 1, "categories": [category names disclosed in text 1, empty list if none]}}, ... one entry per text, in order]}}"""
 
+AUDIT_MULTI_BATCH_PROMPT = AUDIT_HEAD + """
+Independent texts from separate benchmark records:
+{texts}
+
+Judge every text independently; do not infer that the texts belong to the same author.
+Reply with JSON only: {{"labels": [{{"id": 1, "categories": [category names disclosed in text 1, empty list if none]}}, ... one entry per text, in order]}}"""
+
 
 def _cats(x):
     return sorted({c for c in (x or []) if c in CATS})
@@ -227,15 +234,24 @@ def audit_record(cache, model, task, rec):
         return []
 
 
-def audit_batch(cache, model, task, recs):
-    """Audits up to five records of one user in a single call. Returns one category list per record."""
+def audit_batch(cache, model, task, recs, prompt_template=AUDIT_BATCH_PROMPT):
+    """Audit a small record batch in one call; malformed batches fall back to record calls."""
     texts = "\n".join(f'{i+1}. \"\"\"{record_text(task, r)}\"\"\"' for i, r in enumerate(recs))
-    out = generate(cache, model, AUDIT_BATCH_PROMPT.format(texts=texts),
-                   num_predict=30 * len(recs) + 20, fmt="json")
+    # The original cap was deliberately generous but made a slow auditor spend most of its
+    # time generating trailing label objects.  This cap covers the expected compact JSON and
+    # overflow handling below makes the positional truncation explicit when a model continues.
+    num_predict = min(30 * len(recs) + 20, 16 * len(recs) + 48)
+    out = generate(cache, model, prompt_template.format(texts=texts),
+                   num_predict=num_predict, fmt="json")
     try:
         labs = json.loads(out)["labels"]
         if len(labs) == len(recs):
             return [_cats(l.get("categories")) for l in labs]
+        # Some second-auditor generations append extra label objects after the requested
+        # records.  When explicitly enabled, retain only the positional prefix that has a
+        # defined correspondence; the collector reports the overflow response separately.
+        if os.environ.get("AUDIT_ACCEPT_OVERFLOW", "0") == "1" and len(labs) > len(recs):
+            return [_cats(l.get("categories")) for l in labs[:len(recs)]]
     except Exception:
         pass
     return [audit_record(cache, model, task, r) for r in recs]  # malformed reply: one call per record

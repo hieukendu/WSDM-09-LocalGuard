@@ -11,14 +11,15 @@ import os
 import re
 import sys
 
-from common import (AUDITOR, K, NUM_PREDICT, READER, RES, LLMCache, audit_batch,
-                    audit_record, generate, load_proc, reader_prompt, record_text, utility)
+from common import (AUDIT_MULTI_BATCH_PROMPT, AUDITOR, K, NUM_PREDICT, READER, RES, LLMCache,
+                    audit_batch, audit_record, generate, load_proc, reader_prompt, record_text, utility)
 
 M_GATE = 8   # the gate re-ranks the top-8 retrieved records
 N_READER = int(os.environ.get("N_READER", 150))
 M_CF = 6     # counterfactual labels are collected for the top-6 retrieved records
 WORKERS = int(os.environ.get("WORKERS", 4))
 AUDIT_BATCH_SIZE = int(os.environ.get("AUDIT_BATCH_SIZE", 5))
+AUDIT_CROSS_USER = os.environ.get("AUDIT_CROSS_USER", "0") == "1"
 
 
 def pmap(fn, items):
@@ -64,25 +65,31 @@ def stage_audit(task, model=AUDITOR, sample=None, eval_top=False):
     # calls when the structured response is malformed.  Set AUDIT_BATCH_SIZE=1 to reproduce the
     # historical one-record-per-request schedule.
     if AUDIT_BATCH_SIZE > 1:
-        batches = []
-        current_uid, current = None, []
-        for u, ci in todo:
-            if current_uid != u["uid"] or len(current) >= AUDIT_BATCH_SIZE:
-                if current:
-                    batches.append(current)
-                current_uid, current = u["uid"], []
-            current.append((u, ci))
-        if current:
-            batches.append(current)
+        if AUDIT_CROSS_USER:
+            # The multi-user prompt explicitly says that records are independent.  This is
+            # useful for a slower second auditor and does not alter the per-record taxonomy.
+            batches = [todo[i:i + AUDIT_BATCH_SIZE] for i in range(0, len(todo), AUDIT_BATCH_SIZE)]
+        else:
+            batches = []
+            current_uid, current = None, []
+            for u, ci in todo:
+                if current_uid != u["uid"] or len(current) >= AUDIT_BATCH_SIZE:
+                    if current:
+                        batches.append(current)
+                    current_uid, current = u["uid"], []
+                current.append((u, ci))
+            if current:
+                batches.append(current)
 
         def do_batch(batch):
-            u = batch[0][0]
-            cats = audit_batch(cache, model, task, [u["cands"][ci] for _, ci in batch])
-            return u, [(ci, c) for (_, ci), c in zip(batch, cats)]
+            recs = [u["cands"][ci] for _, ci in batch]
+            cats = (audit_batch(cache, model, task, recs, prompt_template=AUDIT_MULTI_BATCH_PROMPT)
+                    if AUDIT_CROSS_USER else audit_batch(cache, model, task, recs))
+            return [((u["uid"], ci), c) for (u, ci), c in zip(batch, cats)]
 
-        for n, (u, rows) in enumerate(pmap(do_batch, batches)):
-            for ci, cats in rows:
-                out.setdefault(u["uid"], {})[str(ci)] = cats
+        for n, rows in enumerate(pmap(do_batch, batches)):
+            for (uid, ci), cats in rows:
+                out.setdefault(uid, {})[str(ci)] = cats
             if n % 100 == 0:
                 print("audit", task, model, "batches", n, len(batches), flush=True)
     else:

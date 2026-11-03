@@ -1,0 +1,152 @@
+{
+ "task": "lamp3",
+ "model": "qwen2.5:7b",
+ "n_users": 150,
+ "n_training": 120,
+ "candidate_pool": "top-5 similarity records",
+ "n_splits": 500,
+ "alphas": [
+  0.2,
+  0.5
+ ],
+ "auditor_labels": "union of qwen2.5:7b and gemma2:9b; count is text self-disclosure only",
+ "family": "ratings are always retained; review text is masked when detector flag count >= threshold",
+ "thresholds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  1000000000
+ ],
+ "fixed": {
+  "0": {
+   "threshold": 0,
+   "text_masked": "all",
+   "loss": 0.0,
+   "utility": 0.9166666666666666,
+   "text_records_kept": 0.0,
+   "text_records_masked": 5.0
+  },
+  "1": {
+   "threshold": 1,
+   "text_masked": "detector_score >= threshold",
+   "loss": 1.1866666666666668,
+   "utility": 0.9233333333333333,
+   "text_records_kept": 2.9266666666666667,
+   "text_records_masked": 2.0733333333333333
+  },
+  "2": {
+   "threshold": 2,
+   "text_masked": "detector_score >= threshold",
+   "loss": 2.0,
+   "utility": 0.9266666666666666,
+   "text_records_kept": 4.426666666666667,
+   "text_records_masked": 0.5733333333333333
+  },
+  "3": {
+   "threshold": 3,
+   "text_masked": "detector_score >= threshold",
+   "loss": 2.24,
+   "utility": 0.93,
+   "text_records_kept": 4.94,
+   "text_records_masked": 0.05999999999999961
+  },
+  "4": {
+   "threshold": 4,
+   "text_masked": "detector_score >= threshold",
+   "loss": 2.2866666666666666,
+   "utility": 0.93,
+   "text_records_kept": 5.0,
+   "text_records_masked": 0.0
+  },
+  "1000000000": {
+   "threshold": 1000000000,
+   "text_masked": "detector_score >= threshold",
+   "loss": 2.2866666666666666,
+   "utility": 0.9333333333333333,
+   "text_records_kept": 5.0,
+   "text_records_masked": 0.0
+  }
+ },
+ "calibrated": {
+  "0.2": {
+   "test_loss": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "test_utility": [
+    0.9154866666666667,
+    0.89,
+    0.94
+   ],
+   "test_text_records_kept": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "test_text_records_masked": [
+    5.0,
+    5.0,
+    5.0
+   ],
+   "calibration_loss": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "selected_index": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "selected_threshold": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fraction_empty_text": 1.0
+  },
+  "0.5": {
+   "test_loss": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "test_utility": [
+    0.9154866666666667,
+    0.89,
+    0.94
+   ],
+   "test_text_records_kept": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "test_text_records_masked": [
+    5.0,
+    5.0,
+    5.0
+   ],
+   "calibration_loss": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "selected_index": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "selected_threshold": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fraction_empty_text": 1.0
+  }
+ },
+ "paired_utility_definition": "same user, same query, same top-five records; only text representation changes",
+ "caveat": "detector-based redaction is a matched representation baseline, not an independently validated privacy label"
+}

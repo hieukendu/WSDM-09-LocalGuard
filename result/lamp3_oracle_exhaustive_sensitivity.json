@@ -1,0 +1,483 @@
+{
+ "task": "lamp3",
+ "model": "qwen2.5:7b",
+ "n_users": 8,
+ "candidate_pool": 8,
+ "search": "all 2^8 subsets of top-eight candidates; cap3 is the original cap-limited replay",
+ "labels": "union of qwen2.5:7b and gemma2:9b for selected top-eight records",
+ "epsilon": [
+  0.0,
+  0.01,
+  0.025,
+  0.05,
+  0.1
+ ],
+ "rows": {
+  "exhaustive_8": {
+   "0.0": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.01": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.025": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.05": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.1": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   }
+  },
+  "cap3": {
+   "0.0": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.01": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.025": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.05": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   },
+   "0.1": {
+    "sufficient_rate": 1.0,
+    "empty_sufficient_rate": 1.0,
+    "full_pool_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "no_profile_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "full_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "top5_utility": [
+     0.9375,
+     0.75,
+     1.0
+    ],
+    "top5_minus_none": [
+     -0.03125,
+     -0.20625,
+     0.0
+    ],
+    "feasible_only_exposure": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_size": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "feasible_only_utility": [
+     0.96875,
+     0.79375,
+     1.0
+    ],
+    "feasible_users_needing_disclosure": 0.0,
+    "infeasible_rate": 0.0
+   }
+  }
+ },
+ "reference_definition": "full retrieved pool utility versus no-profile empty-set utility",
+ "caveat": "oracle uses realized reader utility and auditor labels; it is a feasible-witness sensitivity analysis, not a deployable method"
+}
