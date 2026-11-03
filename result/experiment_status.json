@@ -58,7 +58,7 @@
     "human_audit": "skipped_by_user_already_completed",
     "lamp3_grid_envelope": "completed_with_fine_grid_reader_utility",
     "matched_calibrated_redaction": "completed",
-    "model_70b": "postponed_by_latest_user_instruction; model downloaded but no 70B inference run",
+    "model_70b": "omitted_by_user_scope; model downloaded but no 70B inference run",
     "oracle_epsilon_and_exhaustive_slice": "completed",
     "parser_accounting": "completed"
   }

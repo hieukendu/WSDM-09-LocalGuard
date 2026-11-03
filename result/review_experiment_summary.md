@@ -2,7 +2,7 @@
 
 Updated: 2026-11-03
 
-Human audit was skipped because it was already completed. The 70B model was downloaded but inference was postponed by the latest instruction.
+Human audit was skipped because it was already completed. The 70B experiment was omitted by user scope; the downloaded model was not run.
 
 Completed additional runs are listed in `experiment_status.json`; parser response counts are in `parser_accounting.json`.
 

@@ -16,7 +16,7 @@ This folder contains the aggregate outputs produced for the review follow-up.
 - `sim_crc_rerun.json`: deterministic synthetic CRC sanity check rerun.
 - `experiment_status.json`: per-experiment completion/skip/block status.
 
-The human audit was not rerun, and the 70B inference was postponed after downloading the model. No raw benchmark text,
+The human audit was not rerun, and the 70B experiment was omitted from scope after downloading the model. No raw benchmark text,
 row-level labels, prompts, model caches, or private annotations were copied here.
 
 The LaMP-7 and LaMP-QA standalone utility files use a fresh 150-user union-auditor cohort so the selected CRC

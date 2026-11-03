@@ -304,7 +304,7 @@ def main() -> None:
         "fine_grid_reader_utility_by_task": fine_status,
         "fixed_gate_comparator": "available_from_preexisting_aggregate",
         "human_audit": "skipped_by_user_already_completed",
-        "model_70b": "postponed_by_latest_user_instruction; model downloaded but no 70B inference run",
+        "model_70b": "omitted_by_user_scope; model downloaded but no 70B inference run",
     }
     write_json(out / "experiment_status.json", {"run_date": date.today().isoformat(), "status": fresh,
                                                   "copied_aggregate_outputs": copied,
@@ -314,7 +314,7 @@ def main() -> None:
         "",
         f"Updated: {date.today().isoformat()}",
         "",
-        "Human audit was skipped because it was already completed. The 70B model was downloaded but inference was postponed by the latest instruction.",
+        "Human audit was skipped because it was already completed. The 70B experiment was omitted by user scope; the downloaded model was not run.",
         "",
         "Completed additional runs are listed in `experiment_status.json`; parser response counts are in `parser_accounting.json`.",
         "",
